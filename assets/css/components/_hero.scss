@@ -1,0 +1,46 @@
+.hero {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  transform: translateY(-85px); // move behind header
+
+  &__bg,
+  &__slideshow {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    background-position: bottom;
+    background-size: 120%;
+  }
+
+  &__slide,
+  &__bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &__title {
+    color: get-color(secondary);
+  }
+
+  &__content {
+    color: #fff;
+  }
+}

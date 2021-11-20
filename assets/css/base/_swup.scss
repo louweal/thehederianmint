@@ -1,0 +1,25 @@
+.transition-fade-translate {
+  transition: 0.2s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade-translate {
+  opacity: 0;
+  transform: translateY(
+    100px
+  ); // note: translate 100% will break scrolltrigger animations!
+}
+
+.transition-fade {
+  transition: 0.2s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+.swup-progress-bar {
+  height: 4px;
+  background-color: get-color(primary);
+}

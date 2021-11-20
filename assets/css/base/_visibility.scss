@@ -1,0 +1,75 @@
+:root {
+  --display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
+[class^="display--"] {
+  display: none !important;
+}
+
+@include from(xs) {
+  .display--xs {
+    display: var(--display) !important;
+  }
+
+  .hide--xs {
+    display: none !important;
+  }
+}
+
+@include from(s) {
+  .display--s {
+    display: var(--display) !important;
+  }
+
+  .hide--s {
+    display: none !important;
+  }
+}
+
+@include from(m) {
+  .display--m {
+    display: var(--display) !important;
+  }
+
+  .hide--m {
+    display: none !important;
+  }
+}
+
+@include from(l) {
+  .display--l {
+    display: var(--display) !important;
+  }
+
+  .hide--l {
+    display: none !important;
+  }
+}
+
+@include from(xl) {
+  .display--xl {
+    display: var(--display) !important;
+  }
+
+  .hide--xl {
+    display: none !important;
+  }
+}
+
+@include from(xxl) {
+  .display--xxl {
+    display: var(--display) !important;
+  }
+
+  .hide--xxl {
+    display: none !important;
+  }
+}

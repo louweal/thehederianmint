@@ -1,0 +1,81 @@
+
+$breakpoints: (
+  'xs':  320px, // mobile
+  's': 480px, // phablet
+  'm':  768px, // tablet
+  'l': 977px, // desktop
+  'xl':  1200px, // widescreen
+  'xxl':  1680px, // fullhd
+
+) !default;
+
+$display-modes: inline flex block;
+
+
+
+@mixin from($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width:#{inspect(map-get($breakpoints, $breakpoint))}) {
+             @content;
+        }
+    }
+    @else {
+         @warn"Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+@mixin until($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $maxbreakpoint: inspect(map-get($breakpoints, $breakpoint) - 1);
+        @media (max-width:#{$maxbreakpoint}) {
+             @content;
+        }
+    }
+    @else {
+         @warn"Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+
+$breakpoints-count: length($breakpoints);
+@for $i from 1 through $breakpoints-count {
+  $bp: nth(map-keys($breakpoints), $i);
+  $next-bp: if($i < $breakpoints-count, nth(map-keys($breakpoints), $i + 1), null);
+  .hide-#{$bp} {
+    @if $i==1 {
+      @include media('<#{$next-bp}') {
+        display: none !important;
+      }
+    }
+    @else if $i==$breakpoints-count {
+      @include media('>=#{$bp}') {
+        display: none !important;
+      }
+    }
+    @else {
+      @include media('>=#{$bp}', '<#{$next-bp}') {
+        display: none !important;
+      }
+    }
+  }
+  @each $display-mode in $display-modes {
+    .show-#{$bp}-#{$display-mode} {
+      display: none;
+      @if $i==1 {
+        @include media('<#{$next-bp}') {
+          display: $display-mode;
+        }
+      }
+      @else if $i==$breakpoints-count {
+        @include media('>=#{$bp}') {
+          display: $display-mode;
+        }
+      }
+      @else {
+        @include media('>=#{$bp}', '<#{$next-bp}') {
+          display: $display-mode;
+        }
+      }
+    }
+  }
+}

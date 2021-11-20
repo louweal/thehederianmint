@@ -1,0 +1,22 @@
+@import url("swiper/swiper.min.css");
+@import url("swiper/components/navigation/navigation.min.css");
+@import url("swiper/components/pagination/pagination.min.css");
+
+/* additional styles */
+
+.default-swiper {
+  /* hides navigation (shows on hover) */
+  .swiper-button-next,
+  .swiper-button-prev {
+    opacity: 0;
+    background-size: 80%;
+    transition: opacity 0.15s ease-in;
+  }
+
+  &:hover {
+    .default-swiper-button-next,
+    .default-swiper-button-prev {
+      opacity: 1;
+    }
+  }
+}

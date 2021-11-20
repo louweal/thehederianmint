@@ -1,0 +1,25 @@
+.media {
+  display: flex;
+  align-items: flex-start;
+
+  &__left,
+  &__right {
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &__left {
+    margin-right: 1rem;
+  }
+
+  &__right {
+    margin-left: 1rem;
+  }
+
+  &__content {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}

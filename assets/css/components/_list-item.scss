@@ -1,0 +1,36 @@
+
+$list-item-spacing:(
+  null:'1rem',
+  's':'4rem'
+) !default;
+
+
+.list-item{
+  @include add-spacing(true,false,true,false,'margin',$list-item-spacing);
+
+  &__heading{
+    &,a{
+      color: get-color('headings')
+    }
+    font-family: $heading-font;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__meta{
+    display: block;
+    margin-bottom: 1.25rem;
+    &,a{
+      color: get-color('meta')
+    }
+  }
+
+  &__excerpt{
+    margin-bottom: 1.25rem;
+  }
+
+  &__more{
+      color: get-color('headings');
+      text-decoration: underline;
+  }
+}

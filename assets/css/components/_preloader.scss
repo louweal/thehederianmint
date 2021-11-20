@@ -1,0 +1,98 @@
+$preloader: (
+  offset: 187,
+  duration: 1.4s,
+  background-color: rgba(0, 0, 0, 0.5),
+  spinner-color: #ffffff,
+) !default;
+
+// perloader base
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: map-get($preloader, background-color);
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease-in, visibility 0ms linear 250ms;
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// spinner animation
+
+.preloader__spinner {
+  animation: rotator map-get($preloader, duration) linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: map-get($preloader, offset);
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash map-get($preloader, duration) ease-in-out infinite,
+    colors (map-get($preloader, duration) * 4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: map-get($preloader, spinner-color);
+  }
+
+  25% {
+    stroke: map-get($preloader, spinner-color);
+  }
+
+  50% {
+    stroke: map-get($preloader, spinner-color);
+  }
+
+  75% {
+    stroke: map-get($preloader, spinner-color);
+  }
+
+  100% {
+    stroke: map-get($preloader, spinner-color);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: map-get($preloader, offset);
+  }
+
+  50% {
+    stroke-dashoffset: map-get($preloader, offset) / 4;;
+    transform: rotate(135deg);
+  }
+
+  100% {
+    stroke-dashoffset: map-get($preloader, offset);
+    transform: rotate(450deg);
+  }
+}

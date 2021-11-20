@@ -1,0 +1,67 @@
+/*---------------------------------------- form/select - stylesheet ----------------------------------------*/
+
+.select{
+
+  overflow: hidden;
+  position: relative;
+  border:1px solid get-color('line');
+  width:100%;
+  //max-width: 120px;
+  border-radius: 3px;
+  background-color:  #fff; //get-color('light-background');
+
+
+  &:hover{
+    cursor: hand;
+    cursor: pointer;
+    &:after{
+      opacity: 1;
+    }
+  }
+
+  &:after{
+
+    content:'';
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    right:15px;
+    top:50%;
+    transform: translateY(-50%);
+    background-image: url("../img/ico-down.svg");
+    background-position: 96% 49%;
+    background-repeat: no-repeat;
+    background-size: 11px auto;
+    //background-color: #ccc;
+    opacity: 0.6;
+    transition: opacity 150ms ease-in;
+
+  }
+
+  select {
+
+      padding:12px 15px;
+      width: 130%;
+      font-size:1rem;
+      font-weight: 300;
+      font-family: $base-font;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+
+      &:hover{
+        cursor: hand;
+        cursor: pointer;
+
+      }
+
+      &:focus {
+          outline: none;
+      }
+
+  }
+
+}

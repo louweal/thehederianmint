@@ -1,0 +1,129 @@
+$model-spacing:(
+  null:1rem,
+  xs:2rem,
+  m:3rem
+) !default;
+
+.modal {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: center;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 250ms ease-in, visibility 0ms linear 250ms;
+
+    &--active {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 250ms ease-in;
+    }
+
+    &--fullscreen {
+
+      .modal__inner{
+        height: calc(100vh - 100px);
+        width: calc(100vw - 40px);
+        max-width: none;
+        max-height: none;
+      }
+
+    }
+}
+
+.modal__bg {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.86);
+}
+
+.modal__inner {
+    margin: 0 20px;
+    max-height: calc(100vh - 160px);
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.1);
+
+
+    @include from(m) {
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .modal__content {
+
+        display: block;
+        overflow: hidden;
+        @include add-spacing(true,true,true,true,'padding',$model-spacing);
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: block;
+    overflow: hidden;
+    margin: 5px;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s 0.0s;
+    background: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    span {
+        display: block;
+        position: absolute;
+        top: 48%;
+        left: 10%;
+        right: 10%;
+        height: 8%;
+        background: none;
+        transition: background 0.3s 0.0s;
+
+        &:after,
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transition: background 0.3s 0s;
+        }
+
+        &:before {
+            top: 0;
+            transition-property: top,transform;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            bottom: 0;
+            transition-property: bottom,transform;
+            transform: rotate(-45deg);
+        }
+    }
+}

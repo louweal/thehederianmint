@@ -1,0 +1,181 @@
+// typography
+
+@font-face {
+  font-family: "Arno Pro";
+  // src: url("../../fonts/ArnoProLightDisplay.otf") format("opentype");
+  src: url("..\\..\\fonts\\ArnoProLightDisplay.otf") format("opentype");
+  font-weight: 300;
+}
+
+$base-font: "Helvetica", Helvetica, Arial, sans-serif;
+$heading-font: "Arno Pro", Helvetica, Arial, sans-serif;
+
+$fs-6xl: (
+  null: (
+    72px,
+    64px,
+    1rem,
+  ),
+  l: (
+    72px,
+    64px,
+    1rem,
+  ),
+);
+
+$fs-5xl: (
+  null: (
+    43px,
+    50px,
+    0.9rem,
+  ),
+  l: (
+    48px,
+    56px,
+    1rem,
+  ),
+);
+
+$fs-4xl: (
+  null: (
+    30px,
+    40px,
+    0.8rem,
+  ),
+  l: (
+    36px,
+    44px,
+    0.8rem,
+  ),
+);
+
+$fs-3xl: (
+  null: (
+    26px,
+    30px,
+    0.6rem,
+  ),
+  l: (
+    30px,
+    40px,
+    0.7rem,
+  ),
+);
+
+$fs-2xl: (
+  null: (
+    18px,
+    30px,
+    0.5rem,
+  ),
+  l: (
+    24px,
+    32px,
+    0.6rem,
+  ),
+);
+
+$fs-xl: (
+  null: (
+    18px,
+    30px,
+    0.5rem,
+  ),
+  l: (
+    20px,
+    32px,
+    0.6rem,
+  ),
+);
+
+$fs-lg: (
+  null: (
+    16px,
+    24px,
+    0.5rem,
+  ),
+  l: (
+    18px,
+    28px,
+    0.5rem,
+  ),
+);
+
+$fs-base: (
+  null: (
+    16px,
+    24px,
+    0.5rem,
+  ),
+  l: (
+    16px,
+    24px,
+    0.5rem,
+  ),
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: get-color("headings");
+  font-weight: 900;
+  font-family: $heading-font;
+}
+
+h1 {
+  @include font-size($fs-6xl);
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+h2 {
+  @include font-size($fs-4xl);
+}
+
+h3 {
+  @include font-size($fs-2xl);
+}
+
+h4 {
+  @include font-size($fs-xl);
+}
+
+h5 {
+  @include font-size($fs-lg);
+}
+
+h6 {
+  @include font-size($fs-base);
+}
+
+p {
+  @include font-size($fs-base);
+}
+
+.fs-6xl {
+  @include font-size($fs-6xl);
+}
+.fs-5xl {
+  @include font-size($fs-5xl);
+}
+.fs-4xl {
+  @include font-size($fs-4xl);
+}
+.fs-3xl {
+  @include font-size($fs-3xl);
+}
+.fs-2xl {
+  @include font-size($fs-2xl);
+}
+.fs-xl {
+  @include font-size($fs-xl);
+}
+.fs-lg {
+  @include font-size($fs-lg);
+}
+.fs-base {
+  @include font-size($fs-base);
+}

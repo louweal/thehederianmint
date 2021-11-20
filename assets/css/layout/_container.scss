@@ -1,0 +1,10 @@
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 90%;
+  max-width: $container-max-width;
+
+  &--fluid {
+    max-width: none;
+  }
+}

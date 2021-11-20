@@ -1,0 +1,50 @@
+/*---------------------------------------- form/input - stylesheet ----------------------------------------*/
+body .input{
+
+  margin: 0 0 2rem 0;
+  position: relative;
+
+  &__label{
+    display:block;
+    color: get-color('headings');
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+  }
+
+  &__validation{
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color:red;
+    &,li{
+      list-style: none;
+      margin-left:0;
+      margin-bottom: 5px;
+    }
+  }
+
+
+  input[type='text'], input[type='password'], input[type='email'], textarea{
+
+    border:1px solid  get-color('line');
+    padding:12px 15px;
+    width:100%;
+    font-size:1rem;
+    font-weight: 300;
+    font-family: $base-font;
+    background-color: #fff; //get-color('light-background');
+    transition: border 200ms ease-in;
+    color:get-color('base-text');
+    border-radius: 3px;
+
+    &:focus{
+      border:1px solid get-color('accent');
+      outline: none;
+    }
+  }
+
+  textarea{
+    height: 360px;
+  }
+
+}

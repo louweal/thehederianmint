@@ -1,0 +1,11 @@
+.section {
+  @include add-spacing(true, false, true, false);
+
+  &--no-spacing {
+    padding: 0;
+  }
+
+  &--bgcolor {
+    background-color: get-color(primary);
+  }
+}

@@ -1,0 +1,50 @@
+/*---------------------------------------- form/radio - stylesheet ----------------------------------------*/
+.radio {
+	margin-bottom: 1rem;
+
+	input[type="radio"] {
+		display: none;
+	}
+
+	input[type="radio"]:checked + span:after {
+		display: block;
+	}
+
+	input[type="radio"]:not(:checked) + span:after {
+		display: none;
+	}
+
+	label {
+		display: block;
+		display: flex;
+		align-items: center;
+		&:hover {
+			cursor: pointer;
+			cursor: hand;
+		}
+	}
+
+	span {
+		border: 1px solid get-color("line");
+		background-color: #fff;
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		position: relative;
+		margin-right: 10px;
+		border-radius: 100%;
+
+		&:after {
+			width: 9px;
+			height: 9px;
+			border-radius: 100%;
+			content: "";
+			display: none;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			background-color: get-color("accent");
+		}
+	}
+}
