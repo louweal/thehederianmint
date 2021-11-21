@@ -23,6 +23,16 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/css/main.scss"],
 
+  /**
+   * The styleResources Property
+   * https://github.com/nuxt-community/style-resources-module
+   *
+   * Use this module only to import variables, mixins, functions. and make them globally.
+   */
+  styleResources: {
+    scss: ["@/assets/css/base/_mixins.scss"],
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
@@ -33,7 +43,7 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/style-resources"],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

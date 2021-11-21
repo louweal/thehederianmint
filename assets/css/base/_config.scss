@@ -1,7 +1,7 @@
 // grid and layout
 
 $grid-columns: 12;
-$grid-gutter: 30px;
+$grid-gutter: 28px;
 $container-max-width: 1440px;
 
 // theme colors
@@ -102,7 +102,7 @@ $spacings: (
 // default component styling
 
 $nav-hamburger: (
-  color: map-get($theme-colors, "primary"),
+  color: #fff // map-get($theme-colors, "primary"),,,
 );
 
 $button-spacing: (
