@@ -33,7 +33,7 @@ $ratio-helpers-prefix: ".ratio-" !default;
 
 @mixin maintain-ratio($ratio: 1 1) {
   $width: 100%;
-  $height: percentage(nth($ratio, 2) / nth($ratio, 1));
+  $height: percentage(math.div(nth($ratio, 2), nth($ratio, 1)));
 
   width: $width;
   height: 0;

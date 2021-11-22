@@ -4,7 +4,7 @@
       v-if="url[0] === '/'"
       :to="url"
       class="button"
-      :class="{ 'button--secondary': secondary }"
+      :class="`button--${modifier}`"
     >
       {{ title }}
     </NuxtLink>
@@ -30,12 +30,19 @@
 
   &:hover {
     filter: brightness(1.2);
+    background: get-color(accent);
+    color: #fff;
   }
 
   &--secondary {
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #fff;
     color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: get-color(accent);
+    }
   }
 }
 </style>
@@ -55,9 +62,9 @@ export default {
       default: "#",
       required: true,
     },
-    secondary: {
-      type: Boolean,
-      default: false,
+    modifier: {
+      type: String,
+      default: "",
     },
   },
 };

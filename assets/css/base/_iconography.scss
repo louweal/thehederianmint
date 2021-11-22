@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "icomoon";
-  // src: url("../../fonts/icomoon.eot?amnia3");
-  // src: url("../../fonts/icomoon.eot?amnia3#iefix") format("embedded-opentype"),
-  //   url("../../fonts/icomoon.ttf?amnia3") format("truetype"),
-  //   url("../../fonts/icomoon.woff?amnia3") format("woff"),
-  //   url("../../fonts/icomoon.svg?amnia3#icomoon") format("svg");
+  font-family: "icomoon-thm";
+  src: url("~@/fonts/icomoon-thm.eot?amnia3");
+  src: url("~@/fonts/icomoon-thm.eot?amnia3#iefix") format("embedded-opentype"),
+    url("~@/fonts/icomoon-thm.ttf?amnia3") format("truetype"),
+    url("~@/fonts/icomoon-thm.woff?amnia3") format("woff"),
+    url("~@/fonts/icomoon-thm.svg?amnia3#icomoon-thm") format("svg");
 
-  src: url("..\\..\\fonts\\icomoon.eot?amnia3");
-  src: url("..\\..\\fonts\\icomoon.eot?amnia3#iefix")
-      format("embedded-opentype"),
-    url("..\\..\\fonts\\icomoon.ttf?amnia3") format("truetype"),
-    url("..\\..\\fonts\\icomoon.woff?amnia3") format("woff"),
-    url("..\\..\\fonts\\icomoon.svg?amnia3#icomoon") format("svg");
+  // src: url("..\\..\\fonts\\icomoon-thm.eot?amnia3");
+  // src: url("..\\..\\fonts\\icomoon-thm.eot?amnia3#iefix")
+  //     format("embedded-opentype"),
+  //   url("..\\..\\fonts\\icomoon-thm.ttf?amnia3") format("truetype"),
+  //   url("..\\..\\fonts\\icomoon-thm.woff?amnia3") format("woff"),
+  //   url("..\\..\\fonts\\icomoon-thm.svg?amnia3#icomoon-thm") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -20,7 +20,7 @@
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: "icomoon-thm" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;

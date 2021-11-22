@@ -2,12 +2,19 @@
 
 @font-face {
   font-family: "Arno Pro";
-  // src: url("../../fonts/ArnoProLightDisplay.otf") format("opentype");
-  src: url("..\\..\\fonts\\ArnoProLightDisplay.otf") format("opentype");
+  src: url("~@/fonts/ArnoProLightDisplay.otf") format("opentype");
+  // src: url("..\\..\\fonts\\ArnoProLightDisplay.otf") format("opentype");
   font-weight: 300;
 }
 
-$base-font: "Helvetica", Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: "Metropolis";
+  src: url("~@/fonts/Metropolis-Regular.otf") format("opentype");
+  // src: url("..\\..\\fonts\\Metropolis-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+
+$base-font: "Metropolis", Helvetica, Arial, sans-serif;
 $heading-font: "Arno Pro", Helvetica, Arial, sans-serif;
 
 $fs-6xl: (

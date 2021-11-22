@@ -4,10 +4,13 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
+  router: {
+    base: '/thehederianmint/'
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "hederianmint",
+    title: "The Hederian Mint",
     htmlAttrs: {
       lang: "en",
     },
@@ -30,7 +33,7 @@ export default {
    * Use this module only to import variables, mixins, functions. and make them globally.
    */
   styleResources: {
-    scss: ["@/assets/css/base/_mixins.scss"],
+    scss: ["@/assets/css/base/_config.scss", "@/assets/css/vendors/_include-media.scss", "@/assets/css/utils/_all.scss", "@/assets/css/base/_all.scss"],
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

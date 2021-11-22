@@ -9,24 +9,51 @@
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
-            <h2 class="fs-3xl">Most popular</h2>
+            <h2 class="fs-4xl">Most popular</h2>
           </div>
           <div class="col-xs-5 align-xs-end">
             <Button
               title="Visit GoMint"
               url="https://www.gomint.me/"
-              :secondary="true"
+              modifier="secondary"
             />
           </div>
         </div>
 
-        <div class="grid align-xs-middle">
+        <div class="grid">
           <div
-            v-for="data in $options.tokens"
-            :key="data.ID"
+            v-for="item in popularTokens"
+            :key="item.ID"
             class="col-xs-6 col-l-4"
           >
-            <Card :data="data" />
+            <Card :data="item" />
+          </div>
+        </div>
+      </Container>
+    </Section>
+
+    <Section>
+      <Container>
+        <div class="grid align-xs-middle">
+          <div class="col-xs-7">
+            <h2 class="fs-4xl">New</h2>
+          </div>
+          <div class="col-xs-5 align-xs-end">
+            <Button
+              title="Visit GoMint"
+              url="https://www.gomint.me/"
+              modifier="secondary"
+            />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div
+            v-for="item in newTokens"
+            :key="item.ID"
+            class="col-xs-6 col-l-4"
+          >
+            <Card :data="item" />
           </div>
         </div>
       </Container>
@@ -50,6 +77,15 @@ export default {
   transition: "home",
 
   tokens: tokens,
+
+  computed: {
+    popularTokens() {
+      return this.$options.tokens.filter(x => x.popular !== false)
+    },
+    newTokens() {
+      return this.$options.tokens.filter(x => x.new !== false)
+    }
+  }
 };
 </script>
 

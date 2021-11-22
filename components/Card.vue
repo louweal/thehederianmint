@@ -1,14 +1,20 @@
 <template>
   <div class="card">
     <div class="card__visual">img</div>
-    <h3 class="fs-3xl">Ttiel</h3>
-    <p>test</p>
+
+    <div class="card__body">
+
+
+    <h3 class="fs-3xl">{{data.name}}</h3>
+    <p>{{data.intro}}</p>
 
     <div class="card__footer">
-      <div class="stock"></div>
+      <StockIndicator :current="data.stock.current" :max="data.stock.max" />
 
-      <div class="buy">1024 HBAR <Button title="Buy" url="#" /></div>
+
+      <div><span class="price">{{data.price}} HBAR</span> <Button title="Buy" url="#" /></div>
     </div>
+        </div>
   </div>
 </template>
 
@@ -17,19 +23,28 @@
   background-color: rgba(#403345, 0.2);
   width: 100%;
   height: 100%;
-  padding: 9px 25px;
-  color: #000;
+  padding: 0;
   display: inline-block;
   transition: all 0.3s ease-in;
+  
 
-  &:hover {
-    filter: brightness(1.2);
+  &__visual {
+
   }
 
-  &--secondary {
-    background-color: transparent;
-    box-shadow: inset 0 0 0 1px #fff;
+  &__body {
+    padding: 25px;
     color: #fff;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span.price {
+      margin-right: 15px;
+    }
   }
 }
 </style>
