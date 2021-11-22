@@ -4,28 +4,16 @@
     <Header :fixed="true" />
 
     <Section>
-      <Container> 
+      <Container>
+        <h2>Non-fungible tokens</h2>
         <h1 class="fs-5xl">Find the perfect coin for your inner hbarbarian</h1>
 
         ---
-         </Container>
+      </Container>
     </Section>
 
-        <Section>
+    <Section>
       <Container>
-        <div class="grid align-xs-middle">
-          <div class="col-xs-7">
-            <h2 class="fs-4xl">New</h2>
-          </div>
-          <div class="col-xs-5 align-xs-end">
-            <Button
-              title="Visit GoMint"
-              url="https://www.gomint.me/"
-              modifier="secondary"
-            />
-          </div>
-        </div>
-
         <div class="grid">
           <div
             v-for="item in $options.tokens"

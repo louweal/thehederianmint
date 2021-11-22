@@ -12,11 +12,7 @@
             <h2 class="fs-4xl">Most popular</h2>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button
-              title="Visit GoMint"
-              url="https://www.gomint.me/"
-              modifier="secondary"
-            />
+            <Button title="All coins" url="/coins" modifier="secondary" />
           </div>
         </div>
 
@@ -39,11 +35,7 @@
             <h2 class="fs-4xl">New</h2>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button
-              title="Visit GoMint"
-              url="https://www.gomint.me/"
-              modifier="secondary"
-            />
+            <Button title="All coins" url="/coins" modifier="secondary" />
           </div>
         </div>
 
@@ -80,12 +72,12 @@ export default {
 
   computed: {
     popularTokens() {
-      return this.$options.tokens.filter(x => x.popular !== false)
+      return this.$options.tokens.filter((x) => x.popular !== false);
     },
     newTokens() {
-      return this.$options.tokens.filter(x => x.new !== false)
-    }
-  }
+      return this.$options.tokens.filter((x) => x.new !== false);
+    },
+  },
 };
 </script>
 

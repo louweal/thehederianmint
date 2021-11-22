@@ -7,7 +7,7 @@
           muted
           loop
           autoplay
-          src="#../videos/whale-gold.mp4"
+          src="../videos/whale-gold.mp4"
           data-src-mobile="mobile.mp4"
           data-src-desktop="desktop.mp4"
         >
@@ -28,7 +28,7 @@
 
           <p>
             <Button title="Visit GoMint" url="https://www.gomint.me/" />
-            <Button title="All NFTs" url="/coins" modifier="secondary" />
+            <Button title="All coins" url="/coins" modifier="secondary" />
           </p>
         </div>
       </div>
