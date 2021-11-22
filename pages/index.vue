@@ -24,7 +24,7 @@
           <div
             v-for="item in popularTokens"
             :key="item.ID"
-            class="col-xs-6 col-l-4"
+            class="col-xs-12 col-l-4"
           >
             <Card :data="item" />
           </div>
@@ -51,7 +51,7 @@
           <div
             v-for="item in newTokens"
             :key="item.ID"
-            class="col-xs-6 col-l-4"
+            class="col-xs-12 col-l-4"
           >
             <Card :data="item" />
           </div>
@@ -64,16 +64,16 @@
 </template>
 
 <script>
-import Header from "./../components/Header";
-import Footer from "./../components/Footer";
-import Hero from "./../components/Hero.vue";
-import Section from "./../components/Section.vue";
+// import Header from "./../components/Header";
+// import Footer from "./../components/Footer";
+// import Hero from "./../components/Hero.vue";
+// import Section from "./../components/Section.vue";
 import tokens from "./../data/tokens.json";
 
 export default {
   name: "Main",
 
-  components: { Header, Hero, Section, Footer },
+  // components: { Header, Hero, Section, Footer },
   transition: "home",
 
   tokens: tokens,

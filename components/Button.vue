@@ -8,7 +8,7 @@
     >
       {{ title }}
     </NuxtLink>
-    <a v-else class="button" :class="{ 'button--secondary': secondary }">
+    <a v-else class="button" :class="{ 'button--secondary': modifier === 'secondary' }">
       {{ title }}
     </a>
   </div>

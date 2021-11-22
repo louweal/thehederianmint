@@ -30,7 +30,7 @@
           <div
             v-for="item in $options.tokens"
             :key="item.ID"
-            class="col-xs-6 col-l-4"
+            class="col-xs-12 col-l-4"
           >
             <Card :data="item" />
           </div>
