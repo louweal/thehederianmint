@@ -1,5 +1,7 @@
 <template>
   <div class="card">
+    <div>
+
     <div
       class="card__visual ratio-16x9"
       :style="{
@@ -11,6 +13,9 @@
       <h3 class="fs-3xl">{{ data.name }}</h3>
       <p>{{ data.intro }}</p>
 
+    </div>
+  </div>
+  
       <div class="card__footer">
         <StockIndicator :current="data.stock.current" :max="data.stock.max" />
 
@@ -19,7 +24,7 @@
           <Button title="Buy" url="#" />
         </div>
       </div>
-    </div>
+    
   </div>
 </template>
 
@@ -31,6 +36,9 @@
   padding: 0;
   display: inline-block;
   transition: all 0.3s ease-in;
+      display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
   &__visual {
     background-size: cover;
@@ -39,13 +47,13 @@
 
   &__body {
     padding: 25px;
-    color: #fff;
   }
 
   &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 25px;
 
     span.price {
       margin-right: 15px;

@@ -29,7 +29,6 @@ export default {
   computed: {
     bars() {
       let percentage = (100*this.current)/this.max;
-      console.log(percentage);
 
       switch(true) {
         case percentage <= 25:

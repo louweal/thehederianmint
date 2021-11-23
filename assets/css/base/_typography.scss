@@ -116,7 +116,7 @@ $fs-base: (
   ),
   l: (
     18px,
-    23px,
+    40px,
     2rem,
   ),
 );
@@ -160,6 +160,7 @@ h6 {
 
 p {
   @include font-size($fs-base);
+  opacity: 0.75;
 }
 
 .fs-6xl {
@@ -185,4 +186,28 @@ p {
 }
 .fs-base {
   @include font-size($fs-base);
+}
+
+.underline {
+  border-bottom: 1px solid get-color(primary);
+  padding-bottom: 5px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 0%;
+    height: 1px;
+    z-index: 3;
+    border-bottom: 1px solid #fff;
+    transition: width 0.3s ease-in;
+    // background-color: red;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
 }

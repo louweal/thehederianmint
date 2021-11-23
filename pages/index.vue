@@ -1,7 +1,5 @@
 <template>
   <main class="main">
-    <div class="bg"></div>
-    <Header :fixed="true" />
 
     <Hero />
 
@@ -31,6 +29,40 @@
     <Section>
       <Container>
         <div class="grid align-xs-middle">
+          <div class="col-xs-12 col-l-4 offset-l-1">
+            <h2 class="fs-4xl">About</h2>
+
+            <p>
+              The Hederian Mint is the first to mint exclusive sets of HBAR coins on the Hedera Network containing 
+               <span class="underline">high-quality</span> <span class="underline">three-dimensional</span> coins.
+            </p>
+
+            <p>
+              All tokens are created by Anneloes Louwe, a Leiden-based UX-designer / front-end web developer and Hedera enthousiast. 
+            </p>
+              <!-- <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sint ex velit quam provident repellat, 
+                sunt deserunt assumenda aperiam voluptas consectetur. Voluptas suscipit nesciunt deleniti neque ex nam in dolore.
+              </p> -->
+
+            <!-- <Button url="/about" title="More" modifier="secondary" />  -->
+          </div>
+          <div class="col-xs-12 offset-l-2 col-l-5">
+            <div
+            class="img ratio-4x3"
+            :style="{
+              backgroundImage: `url(` + require(`~/images/about-1.png`) + `)`,
+            }"
+            />
+          </div>
+        </div>
+
+      </Container>
+    </Section>    
+
+    <Section>
+      <Container>
+        <div class="grid align-xs-middle">
           <div class="col-xs-7">
             <h2 class="fs-4xl">New</h2>
           </div>
@@ -51,21 +83,17 @@
       </Container>
     </Section>
 
-    <Footer />
+
   </main>
 </template>
 
 <script>
-// import Header from "./../components/Header";
-// import Footer from "./../components/Footer";
-// import Hero from "./../components/Hero.vue";
-// import Section from "./../components/Section.vue";
 import tokens from "./../data/tokens.json";
+import "../assets/css/components/_img.scss";
 
 export default {
   name: "Main",
 
-  // components: { Header, Hero, Section, Footer },
   transition: "home",
 
   tokens: tokens,
@@ -81,16 +109,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(#403345, 1) 100%
-  );
-}
-</style>
+

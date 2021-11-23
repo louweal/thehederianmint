@@ -1,7 +1,5 @@
 <template>
   <main class="main">
-    <div class="bg"></div>
-    <Header :fixed="true" />
 
     <Section>
       <Container>
@@ -26,7 +24,6 @@
       </Container>
     </Section>
 
-    <Footer />
   </main>
 </template>
 
