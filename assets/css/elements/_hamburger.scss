@@ -1,5 +1,5 @@
 $nav-hamburger: (
-  color: #fff // map-get($theme-colors, "primary"),,,,,,,,,
+  color: #fff // map-get($theme-colors, "primary"),,,,,,,,,,
 ) !default;
 
 .hamburger {
@@ -70,26 +70,26 @@ $nav-hamburger: (
   //     }
   //   }
   // }
-}
 
-.hamburger-active {
-  span {
-    background: none;
-    transition: background 0.1s 0s;
+  &--active {
+    span {
+      background: none;
+      transition: background 0.1s 0s;
 
-    &::after,
-    &::before {
-      transition: background 0s, 0.3s;
-    }
+      &::after,
+      &::before {
+        transition: background 0s, 0.3s;
+      }
 
-    &::before {
-      top: 0;
-      transform: rotate(45deg);
-    }
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
 
-    &::after {
-      bottom: 0;
-      transform: rotate(-45deg);
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
     }
   }
 }

@@ -14,18 +14,25 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Metropolis";
+  src: url("~@/fonts/Metropolis-Medium.otf") format("opentype");
+  // src: url("..\\..\\fonts\\Metropolis-Regular.otf") format("opentype");
+  font-weight: 500;
+}
+
 $base-font: "Metropolis", Helvetica, Arial, sans-serif;
 $heading-font: "Arno Pro", Helvetica, Arial, sans-serif;
 
 $fs-6xl: (
   null: (
-    65px,
-    64px,
+    55px,
+    60px,
     1rem,
   ),
   l: (
-    68px,
-    68px,
+    80px,
+    88px,
     1rem,
   ),
 );
@@ -45,8 +52,8 @@ $fs-5xl: (
 
 $fs-4xl: (
   null: (
-    46px,
-    44px,
+    36px,
+    39px,
     0.8rem,
   ),
   l: (
@@ -58,8 +65,8 @@ $fs-4xl: (
 
 $fs-3xl: (
   null: (
-    30px,
-    30px,
+    24px,
+    27px,
     0.6rem,
   ),
   l: (
@@ -116,7 +123,7 @@ $fs-base: (
   ),
   l: (
     18px,
-    40px,
+    33px,
     2rem,
   ),
 );
@@ -128,7 +135,7 @@ h4,
 h5,
 h6 {
   color: get-color("headings");
-  font-weight: 900;
+  font-weight: 500;
   font-family: $heading-font;
 }
 
@@ -160,7 +167,8 @@ h6 {
 
 p {
   @include font-size($fs-base);
-  opacity: 0.75;
+  color: rgba(#fff, 0.66);
+  // opacity: 0.66;
 }
 
 .fs-6xl {
@@ -187,6 +195,12 @@ p {
 .fs-base {
   @include font-size($fs-base);
 }
+
+.f-base {
+  font-family: $base-font;
+}
+
+// test
 
 .underline {
   border-bottom: 1px solid get-color(primary);

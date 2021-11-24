@@ -1,10 +1,22 @@
 <template>
   <div class="stock-indicator">
-    <div class="stock-indicator__bar" :class="{'stock-indicator__bar--active' : bars >= 1 }" />
-    <div class="stock-indicator__bar" :class="{'stock-indicator__bar--active' : bars >= 2 }" />
-    <div class="stock-indicator__bar"  :class="{'stock-indicator__bar--active' : bars >= 3 }" />
-    <div class="stock-indicator__bar" :class="{'stock-indicator__bar--active' : bars >= 4 }" />
-      {{current}}<span style="opacity: 0.5">/{{max}}</span>
+    <div
+      class="stock-indicator__bar"
+      :class="{ 'stock-indicator__bar--active': bars >= 1 }"
+    />
+    <div
+      class="stock-indicator__bar"
+      :class="{ 'stock-indicator__bar--active': bars >= 2 }"
+    />
+    <div
+      class="stock-indicator__bar"
+      :class="{ 'stock-indicator__bar--active': bars >= 3 }"
+    />
+    <div
+      class="stock-indicator__bar"
+      :class="{ 'stock-indicator__bar--active': bars >= 4 }"
+    />
+    {{ current }}<span style="opacity: 0.5">/{{ max }}</span>
   </div>
 </template>
 
@@ -13,7 +25,7 @@ export default {
   name: "StockIndicator",
 
   props: {
-   current: {
+    current: {
       type: Number,
       default: 0,
       required: true,
@@ -24,25 +36,25 @@ export default {
       required: true,
     },
   },
-  
 
   computed: {
     bars() {
-      let percentage = (100*this.current)/this.max;
+      let percentage = (100 * this.current) / this.max;
 
-      switch(true) {
+      switch (true) {
+        case percentage == 0:
+          return 0;
         case percentage <= 25:
           return 1;
         case percentage <= 50:
           return 2;
-        case percentage <= 75: 
+        case percentage <= 75:
           return 3;
         case percentage <= 100:
-          return 4; 
+          return 4;
       }
-    }
-  }
-
+    },
+  },
 };
 </script>
 
@@ -72,5 +84,4 @@ export default {
     }
   }
 }
-
 </style>

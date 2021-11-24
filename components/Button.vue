@@ -8,30 +8,43 @@
     >
       {{ title }}
     </NuxtLink>
-    <a v-else class="button" :class="{ 'button--secondary': modifier === 'secondary' }">
+    <a
+      v-else
+      class="button"
+      :class="{ 'button--secondary': modifier === 'secondary' }"
+    >
       {{ title }}
     </a>
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" xxxscoped>
 .button-container {
   display: inline-block;
 }
 
 .button {
   background-color: #b8ac84; //get-color("primary");
-  padding: 9px 25px;
+  padding: 5px 20px 4px 20px;
   color: #000;
   display: inline-block;
   transition: all 0.3s ease-in;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-style: solid;
+  outline: none;
+  border-width: 0px;
+
+  @include from(l) {
+    padding: 9px 25px 7px 25px;
+  }
 
   &:hover {
     filter: brightness(1.2);
     background: get-color(accent);
     color: #fff;
+    cursor: pointer;
   }
 
   &--secondary {

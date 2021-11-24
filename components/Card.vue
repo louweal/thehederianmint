@@ -1,30 +1,28 @@
 <template>
   <div class="card">
     <div>
+      <div
+        class="card__visual ratio-16x9"
+        :style="{
+          backgroundImage: `url(` + require(`~/images/${data.image}`) + `)`,
+        }"
+      />
 
-    <div
-      class="card__visual ratio-16x9"
-      :style="{
-        backgroundImage: `url(` + require(`~/images/${data.image}`) + `)`,
-      }"
-    />
-
-    <div class="card__body">
-      <h3 class="fs-3xl">{{ data.name }}</h3>
-      <p>{{ data.intro }}</p>
-
-    </div>
-  </div>
-  
-      <div class="card__footer">
-        <StockIndicator :current="data.stock.current" :max="data.stock.max" />
-
-        <div>
-          <span class="price">{{ data.price }} HBAR</span>
-          <Button title="Buy" url="#" />
-        </div>
+      <div class="card__body">
+        <h3 class="fs-3xl">{{ data.name }}</h3>
+        <p>{{ data.intro }}</p>
       </div>
-    
+    </div>
+
+    <div class="card__footer">
+      <StockIndicator :current="data.stock.current" :max="data.stock.max" />
+
+      <div v-if="inStock">
+        <span class="price">{{ data.price }} HBAR</span>
+        <Button title="Buy" url="#" />
+      </div>
+      <div v-else>SOLD OUT</div>
+    </div>
   </div>
 </template>
 
@@ -36,9 +34,12 @@
   padding: 0;
   display: inline-block;
   transition: all 0.3s ease-in;
-      display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // opacity: 0;
+  // transform: translateY(40px);
+  transition: background-color 0.3s 0.1s ease-in;
 
   &__visual {
     background-size: cover;
@@ -47,6 +48,7 @@
 
   &__body {
     padding: 25px;
+    padding-bottom: 0;
   }
 
   &__footer {
@@ -54,10 +56,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 25px;
+    padding-top: 0;
 
-    span.price {
-      margin-right: 15px;
+    .button-container {
+      margin-left: 15px;
     }
+  }
+
+  &:hover {
+    background-color: rgba(#403345, 0.4); //rgba(#000, 0.2);
+    cursor: pointer;
   }
 }
 </style>
@@ -71,6 +79,12 @@ export default {
       type: Object,
       default: {},
       required: true,
+    },
+  },
+
+  computed: {
+    inStock() {
+      return this.data.stock.current > 0;
     },
   },
 };

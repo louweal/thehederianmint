@@ -7,7 +7,7 @@
           muted
           loop
           autoplay
-          src="#../videos/whale-gold.mp4"
+          src="../videos/whale-gold.mp4"
           data-src-mobile="mobile.mp4"
           data-src-desktop="desktop.mp4"
         >
@@ -16,19 +16,29 @@
       </div>
     </div>
     <Container>
-      <div class="grid">
+      <div class="grid no-bottom-margin-cols">
+        <div class="col-xs-12 col-l-6 offset-l-1">
+          <h1 class="fs-6xl" ref="split-chars">
+            Take your hbarbarianism to the next level
+          </h1>
+        </div>
+        <div class="col-xs-12"><!-- empty --></div>
         <div class="col-xs-12 col-l-5 offset-l-1">
-          <!-- <client-only>  -->
-          <h1 class="fs-6xl" ref="title">Take your hbarbarianism to the next level</h1>
-          <!-- </client-only> -->
+          <p class="fade-in-up delay-1000">
+            Discover the very first set of exclusive high-quality HBAR coins
+            ever minted on the Hedera network. All our coins are manually
+            crafted and made with love.
+          </p>
 
-          <p>Join your fellow hbarbarians and obtain your favorite exclusive HBAR coin now. The Hederian Mint mints only a small amount of coins each month. 
-            The first set contains only four unique designs and might sell-out soon. Don't miss out!</p>
+          <!-- <Button title="Visit GoMint" url="https://www.gomint.me/" /> -->
+          <Button
+            title="Browse nfts"
+            url="/coins"
+            modifier="secondary"
+            class="fade-in-up delay-1250"
+          />
 
-          <!-- <p> -->
-            <Button title="Visit GoMint" url="https://www.gomint.me/" />
-            <Button title="All coins" url="/coins" modifier="secondary" />
-          <!-- </p> -->
+          <br /><br />
         </div>
       </div>
     </Container>
@@ -39,31 +49,29 @@
 import Container from "./../components/Container";
 import Button from "./../components/Button";
 
-let Splitting = null
+let Splitting = null;
 
 if (process.client) {
-  Splitting = require('splitting')
+  Splitting = require("splitting");
 }
-
 
 export default {
   name: "Hero",
 
   components: { Container, Button },
 
-   methods:{
-     initSplitting: function(target) {
+  methods: {
+    initSplitting: function (target) {
       Splitting({
         target: target,
         by: "chars",
-        key: null
+        key: null,
       });
-    }
- },
- mounted(){
-   let target = this.$refs['title']; 
-    this.initSplitting(target);
- },
+    },
+  },
+  mounted() {
+    this.initSplitting(this.$refs["split-chars"]);
+  },
 };
 </script>
 

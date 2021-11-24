@@ -1,14 +1,19 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <Container>
       <div class="grid">
         <div class="col-xs-12 col-l-3">
           <h4 class="fs-3xl">Contact</h4>
 
           <p>
+            Submit your questions and suggestions using the contact form, or
+            reach out through Twitter, Instagram or Discord.
+          </p>
+
+          <!-- <p>
             Nulla sit condimentum morbi pulvinar leo velit ultrices. Vitae ipsum
             posuere netus nibh vitae. Ut risus quis non.
-          </p>
+          </p> -->
         </div>
         <div class="col-xs-12 col-l-3">
           <form name="contact" method="POST" data-netlify="true">
@@ -23,7 +28,9 @@
               </label>
             </p>
             <p>
-              <button type="submit">Send</button>
+              <button class="button button--secondary" type="submit">
+                Send
+              </button>
             </p>
           </form>
         </div>
@@ -59,7 +66,7 @@
           />
         </div>
         <div class="col-xs-12">
-          © {{ new Date().getFullYear() }} The Hederian Mint
+          <p>© {{ new Date().getFullYear() }} The Hederian Mint</p>
         </div>
       </div>
     </Container>
@@ -87,19 +94,45 @@ input[type="email"] {
   width: 100%;
   height: 38px;
   background-color: transparent;
-  border-color: get-color(accent);
+  border-color: rgba(#fff, 0.66);
+  border-width: 0px;
+  border-bottom-width: 1px;
   border-style: solid;
-  border-width: 1px;
+  color: #fff;
+  transition: border-color 0.3s ease-in;
+
+  &:hover,
+  &:active {
+    border-color: #fff;
+  }
 }
 
 textarea {
   width: 100%;
   height: 3 * 38px;
-
   background-color: transparent;
-  border-color: #fff;
+
+  border-color: rgba(#fff, 0.66);
+  border-width: 0px;
+  border-bottom-width: 1px;
   border-style: solid;
-  border-width: 1px;
+  color: #fff;
+  font-family: $base-font;
+  transition: border-color 0.3s ease-in;
+
+  &:hover,
+  &:active {
+    border-color: #fff;
+  }
+}
+
+button.button {
+  opacity: 0.75;
+  transition: opacity 0.3s ease-in;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 </style>
 

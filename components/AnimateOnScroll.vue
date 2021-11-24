@@ -1,21 +1,10 @@
 <template>
-  <div>
-    <div class="bg"></div>
-    <Header :fixed="true" />
-
-    <Pushmenu />
-    <!-- <animate-on-scroll> -->
-    <transition
-      v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
-      v-on:leave="leave"
-    >
-      <Nuxt />
-    </transition>
-    <!-- </animate-on-scroll> -->
-    <Footer />
+  <div class="animate-on-scroll">
+    <slot />
   </div>
 </template>
+
+<style lang="scss" scoped></style>
 
 <script>
 let Splitting = null;
@@ -35,41 +24,6 @@ export default {
   },
 
   methods: {
-    beforeEnter: function (el) {
-      console.log("before enter");
-      window.scrollTo(0, 0);
-    },
-    initAnimations() {
-      this.splittingTargets = document.querySelectorAll(
-        "[data-aos='splitting']"
-      );
-      [].forEach.call(this.splittingTargets, (target) => {
-        // hide all targets
-        target.style.opacity = "0";
-      });
-
-      this.appearingTargets = document.querySelectorAll(
-        "[data-aos='fade-in-up']"
-      );
-      [].forEach.call(this.appearingTargets, (target) => {
-        // hide all targets
-        target.style.opacity = "0";
-      });
-
-      window.addEventListener("scroll", this.updateScroll);
-      // also run the function once directly
-      this.updateScroll();
-    },
-
-    enter: function (el, done) {
-      console.log("enter");
-      this.initAnimations();
-    },
-    leave: function (el, done) {
-      console.log("leave");
-      // done();
-      // window.scrollTo(0, 0);
-    },
     updateScroll() {
       [].forEach.call(this.splittingTargets, (target) => {
         var rect = target.getBoundingClientRect();
@@ -89,18 +43,19 @@ export default {
       });
 
       //fade in up animation
-      // console.log(this.appearingTargets);
+      console.log(this.appearingTargets);
       [].forEach.call(this.appearingTargets, (target) => {
         var rect = target.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
 
-        // "top 90%"
-        var isVisible = elemTop < window.innerHeight * 0.9; // && elemBottom >= 0;
+        // "top 75%"
+        var isVisible = elemTop < window.innerHeight * 0.75; // && elemBottom >= 0;
 
         if (isVisible) {
-          // start animation
+          // split target if it was not splitted before
           if (!target.classList.contains("fade-in-up")) {
+            // target.style.opacity = "1";
             target.classList.add("fade-in-up");
           }
         }
@@ -116,7 +71,25 @@ export default {
   },
 
   mounted() {
-    this.initAnimations();
+    this.splittingTargets = document.querySelectorAll("[data-aos='splitting']");
+    [].forEach.call(this.splittingTargets, (target) => {
+      // hide all targets
+      target.style.opacity = "0";
+    });
+
+    this.appearingTargets = document.querySelectorAll(
+      "[data-aos='fade-in-up']"
+    );
+    [].forEach.call(this.appearingTargets, (target) => {
+      // hide all targets
+      target.style.opacity = "0";
+    });
+
+    window.addEventListener("scroll", this.updateScroll);
+    // this.initSplitting(this.$refs["split-chars"]);
+
+    // also run the function once directly
+    this.updateScroll();
   },
 
   beforeDestroy() {
@@ -130,17 +103,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(#403345, 1) 100%
-  );
-}
-</style>

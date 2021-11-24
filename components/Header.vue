@@ -1,18 +1,18 @@
 <template>
-  <header class="header" :class="{ 'header--fixed': fixed }">
+  <header class="header" :class="{ 'header--fixed': fixed }" id="top">
     <Container :fluid="true">
       <div class="grid collapse no-bottom-margin-cols align-xs-middle">
         <div class="col-xs-4">
-          <div class="hamburger js-toggle-pushmenu">
+          <div class="hamburger" @click="togglePushmenu">
             <span />
           </div>
         </div>
         <div class="col-xs-4 align-xs-center">
-          <NuxtLink to="/">
+          <NuxtLink to="/#top">
             <div class="header__logo"></div>
           </NuxtLink>
         </div>
-        <div class="col-xs-4 align-xs-end">
+        <div class="col-xs-4 align-xs-end hide--xs display--l">
           <Button title="Visit GoMint" url="https://www.gomint.me/" />
         </div>
       </div>
@@ -71,6 +71,18 @@ export default {
     fixed: {
       type: Boolean,
       default: false,
+    },
+  },
+
+  methods: {
+    togglePushmenu() {
+      let pushmenu = document.querySelector(".pushmenu");
+      console.log(pushmenu);
+      pushmenu.classList.toggle("pushmenu--active");
+
+      let hamburger = document.querySelector(".hamburger");
+      console.log(hamburger);
+      hamburger.classList.toggle("hamburger--active");
     },
   },
 };

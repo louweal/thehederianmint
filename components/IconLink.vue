@@ -1,35 +1,23 @@
 <template>
-  <a :href="url" target="_blank" rel="noopener noreferrer" class="icon-link">
-    <div class="icon-link__icon">
+  <a :href="url" target="_blank" rel="noopener noreferrer" class="iconlink">
+    <div class="iconlink__icon">
       <i :class="`icon-${icon}`"></i>
     </div>
-    <div class="icon-link__label" v-text="title" />
+    <div class="iconlink__label" v-text="title" />
   </a>
 </template>
 
 <style lang="scss" scoped>
-.icon-link {
+.iconlink {
   display: flex;
   width: 100%;
   height: 38px;
   align-items: center;
   margin: 0.5rem 0;
   column-gap: 20px;
-  transition: all 0.3 ease-in;
+  transition: all 0.3s ease-in;
   color: rgba(#fff, 0.75);
-  font-family: $base-font;
-
-  &:hover {
-    color: rgba(get-color(primary), 0.75);
-
-    .icon-link__icon {
-      border-color: get-color(primary);
-
-      i {
-        color: get-color(primary);
-      }
-    }
-  }
+  // font-family: $base-font;
 
   &__icon {
     display: flex;
@@ -37,8 +25,25 @@
     align-items: center;
     width: 38px;
     height: 38px;
-    border: 1px solid #fff;
-    opacity: 0.5;
+    border: 1px solid rgba(#fff, 0.5);
+    transition: all 0.3s ease-in;
+
+    i {
+      color: rgba(#fff, 0.5);
+      transition: color 0.3s ease-in;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+
+    .iconlink__icon {
+      border-color: #fff;
+
+      i {
+        color: #fff;
+      }
+    }
   }
 }
 </style>
