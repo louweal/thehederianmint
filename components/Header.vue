@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--fixed': fixed }" id="top">
+  <header class="header" :class="{ 'header--fixed': fixed }">
     <Container :fluid="true">
       <div class="grid collapse no-bottom-margin-cols align-xs-middle">
         <div class="col-xs-4">

@@ -48,7 +48,7 @@
 
   &__body {
     padding: 25px;
-    padding-bottom: 0;
+    padding-bottom: 20px;
   }
 
   &__footer {

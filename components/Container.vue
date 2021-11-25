@@ -8,8 +8,12 @@
 .container {
   margin: 0 auto;
   position: relative;
-  width: 95%;
+  width: 90%;
   max-width: $container-max-width;
+
+  @include from(xl) {
+    width: 95%;
+  }
 
   &--fluid {
     max-width: none;

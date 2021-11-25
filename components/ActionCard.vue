@@ -3,8 +3,7 @@
     <div class="action-card__body">
       <h3 class="fs-4xl">Suggestions?</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint
-        necessitatibus quis distinctio!
+        Awesome ideas for new coins are always welcome. Let us know your suggestions and your idea might come to life very soon!
       </p>
     </div>
 
@@ -49,6 +48,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 370px;
   // transition: background-color 0.3s 0.1s ease-in;
 
   @include from(l) {
@@ -56,23 +56,10 @@
   }
 
   &__body {
+    margin-bottom: 20px;
   }
 
   &__footer {
   }
 }
 </style>
-
-<script>
-export default {
-  name: "Card",
-
-  props: {
-    data: {
-      type: Object,
-      default: {},
-      // required: true,
-    },
-  },
-};
-</script>

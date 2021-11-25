@@ -1,10 +1,9 @@
 <template>
-  <div>
+  <div id="top">
     <div class="bg"></div>
     <Header :fixed="true" />
 
     <Pushmenu />
-    <!-- <animate-on-scroll> -->
     <transition
       v-on:before-enter="beforeEnter"
       v-on:enter="enter"
@@ -12,7 +11,7 @@
     >
       <Nuxt />
     </transition>
-    <!-- </animate-on-scroll> -->
+    
     <Footer />
   </div>
 </template>
@@ -25,7 +24,7 @@ if (process.client) {
 }
 
 export default {
-  name: "AnimateOnScroll",
+  name: "Default",
 
   data: function () {
     return {
@@ -132,15 +131,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 30%,
-    rgba(#403345, 1) 100%
-  );
-}
+// .bg {
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: -1;
+//   background: linear-gradient(
+//     180deg,
+//     rgba(0, 0, 0, 1) 30%,
+//     rgba(#403345, 1) 100%
+//   );
+// }
 </style>

@@ -7,7 +7,7 @@
           muted
           loop
           autoplay
-          src="../videos/whale-gold.mp4"
+          src="#../videos/whale-gold.mp4"
           data-src-mobile="mobile.mp4"
           data-src-desktop="desktop.mp4"
         >
