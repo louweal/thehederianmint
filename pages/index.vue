@@ -17,7 +17,7 @@
           <div
             v-for="(item, index) in popularTokens"
             :key="item.ID"
-            :class="`delay-${(index % 3) * 200}`"
+            :class="`delay-l-${(index % 3) * 200}`"
             class="col-xs-12 col-l-4"
             data-aos="fade-in-up"
           >

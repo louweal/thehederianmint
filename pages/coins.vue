@@ -23,13 +23,13 @@
           <div
             v-for="(item, index) in $options.tokens"
             :key="item.ID"
-            :class="`delay-${(index % 3) * 200}`"
+            :class="`delay-l-${(index % 3) * 200}`"
             class="col-xs-12 col-l-4"
             data-aos="fade-in-up"
           >
             <Card :data="item" />
           </div>
-          <div class="col-xs-12 col-l-4 delay-400" data-aos="fade-in-up">
+          <div class="col-xs-12 col-l-4 delay-l-400" data-aos="fade-in-up">
             <ActionCard />
           </div>
         </div>

@@ -75,6 +75,7 @@
 
 <style lang="scss" scoped>
 .footer {
+  margin-top: 4rem;
   font-size: 16px;
 
   p {

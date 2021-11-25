@@ -6,10 +6,6 @@
   opacity: 0;
 }
 
-[data-aos="splitting"] {
-  // opacity: 0.2;
-}
-
 .fade-in-up {
   animation: slide-in 0.7s cubic-bezier(0.2, 0, 0.1, 1) both;
   will-change: transform, opacity;
@@ -23,13 +19,15 @@
   animation-delay: 1250ms;
 }
 
-.delay-200 {
+// delay for grid items
+
+.delay-l-200 {
   @include from(l) {
     animation-delay: 200ms;
   }
 }
 
-.delay-400 {
+.delay-l-400 {
   @include from(l) {
     animation-delay: 400ms;
   }
