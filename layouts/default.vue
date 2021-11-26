@@ -99,7 +99,7 @@ export default {
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
 
-        // "top 90%"
+        // "top 70%"
         var isVisible = elemTop < window.innerHeight * 0.9; // && elemBottom >= 0;
 
         if (isVisible) {

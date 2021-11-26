@@ -25,7 +25,7 @@
 
 .button {
   background-color: #b8ac84; //get-color("primary");
-  padding: 5px 20px 4px 20px;
+  padding: 9px 22px 6px 22px;
   color: #000;
   display: inline-block;
   transition: all 0.3s ease-in;

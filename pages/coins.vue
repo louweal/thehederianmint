@@ -4,7 +4,7 @@
       <Container>
         <div class="grid collapse">
           <div class="col-xs-11 col-l-5">
-            <h2 class="fs-2xl f-base fade-in-up delay-1000">
+            <h2 class="fs-2xl f-base fade-in-up delay-1250">
               Non-fungible tokens
             </h2>
             <h1 class="fs-5xl" ref="splitting">
