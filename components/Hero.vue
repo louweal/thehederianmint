@@ -79,10 +79,15 @@ export default {
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 108px);
+  height: calc(100vh - 97px);
   padding-top: 60px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+
+  @include from(l) {
+     height: calc(100vh - 108px);
+  }
 
   &__bg {
     @include pin;
@@ -94,11 +99,23 @@ export default {
 
   &__bgvideo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    max-width: 1137px;
-    max-height: 720px;
+    height: 100vh;
+    max-height: 100vh;
     right: 0;
     overflow: hidden;
+    filter: brightness(0.6);
+
+    video {
+      height: 110vh;
+    }
+
+    @include from(l) {
+    max-width: 1137px;
+    max-height: 720px;
+    filter: brightness(0.8);      
+    }
   }
 }
 </style>

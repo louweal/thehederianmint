@@ -11,7 +11,16 @@
 
                 <div
           class="card__video">
-video
+        <video
+          playsinline
+          muted
+          loop
+          autoplay
+          src="../videos/whale-gold.mp4"
+          data-src-mobile="mobile.mp4"
+          data-src-desktop="desktop.mp4"
+        ><div class="video-error">Unable to play video on this device</div>
+        </video>
           </div>
       </div>
 
@@ -59,13 +68,15 @@ video
 
   &__header {
     position: relative;
+    overflow: hidden;
   }
 
   &__visual {
         position: absolute;
     background-size: cover;
     background-position: center;
-    transition: opacity 0.3s ease-in;
+    transition: opacity 0.6s ease-in;
+    
   }
 
   &__video {
@@ -77,7 +88,12 @@ video
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.3s ease-in;
+    transition: opacity 0.6s ease-in;
+
+    video {
+    // width: 100%;
+    height: 120%;
+    }
   }
 
   &__body {
