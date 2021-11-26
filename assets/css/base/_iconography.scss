@@ -124,3 +124,12 @@
 .icon-share:before {
   content: "\e913";
 }
+
+// custom
+
+.icon-gomint::before {
+  content: "G";
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: $heading-font;
+}
