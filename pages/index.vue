@@ -25,13 +25,14 @@
           </div>
         </div>
       </Container>
-      <div id="about" />
+      
     </Section>
 
     <Section>
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-12 col-l-4 offset-l-1">
+            <div id="about"></div>
             <h2 class="fs-4xl" data-aos="splitting">About</h2>
 
             <p data-aos="fade-in-up">
@@ -95,10 +96,10 @@ export default {
 
   computed: {
     popularTokens() {
-      return this.$options.tokens.filter((x) => x.popular !== false);
+      return this.$options.tokens.filter((x) => x.popular !== false).sort((a, b) => (a.popular > b.popular) ? 1 : -1);
     },
     newTokens() {
-      return this.$options.tokens.filter((x) => x.new !== false);
+      return this.$options.tokens.filter((x) => x.new !== false).sort((a, b) => (a.new > b.new) ? 1 : -1);
     },
   },
 };

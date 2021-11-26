@@ -1,10 +1,18 @@
 <template>
-  <a :href="url" target="_blank" rel="noopener noreferrer" class="iconlink">
+<div>
+  <NuxtLink v-if="url[0] === '#'" :to="url" class="iconlink"> <!-- anchor -->
+    <div class="iconlink__icon">
+      <i :class="`icon-${icon}`"></i>
+    </div>
+    <div class="iconlink__label" v-text="title" />
+  </NuxtLink>
+  <a v-else :href="url" target="_blank" rel="noopener noreferrer" class="iconlink">
     <div class="iconlink__icon">
       <i :class="`icon-${icon}`"></i>
     </div>
     <div class="iconlink__label" v-text="title" />
   </a>
+  </div>
 </template>
 
 <style lang="scss" scoped>

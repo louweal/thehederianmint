@@ -1,13 +1,18 @@
 <template>
   <nav class="pushmenu">
     <ul>
-      <li class="delay-0"><a href="/" class="fs-5xl">Home</a></li>
-      <li class="delay-200">
-        <a href="/#about" class="fs-5xl" @click="togglePushmenu">About</a>
+      <li class="delay-0" @click="togglePushmenu">
+        <NuxtLink to="/" class="fs-5xl">Home</NuxtLink>
       </li>
-      <li class="delay-400"><a href="/coins" class="fs-5xl">NFTs</a></li>
-      <li class="delay-600">
-        <a href="/#contact" class="fs-5xl" @click="togglePushmenu">Contact</a>
+      <li class="delay-200" @click="togglePushmenu">
+        <!-- <a href="#about" class="fs-5xl">About</a> -->
+        <NuxtLink :to="{ path: '/', hash:'#about'}" class="fs-5xl">About</NuxtLink>
+      </li>
+      <li class="delay-400" @click="togglePushmenu">
+        <NuxtLink to="/coins" class="fs-5xl">NFTs</NuxtLink>
+      </li>
+      <li class="delay-600" @click="togglePushmenu">
+        <NuxtLink to="#contact" class="fs-5xl">Contact</NuxtLink>
       </li>
     </ul>
   </nav>
@@ -35,6 +40,8 @@
 
   li {
     opacity: 0;
+        font-family: $heading-font;
+    line-height: 110px;
     transition: opacity 0.4s 0.4s linear;
   }
 

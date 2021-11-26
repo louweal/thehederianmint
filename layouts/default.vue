@@ -36,7 +36,12 @@ export default {
   methods: {
     beforeEnter: function (el) {
       console.log("before enter");
-      window.scrollTo(0, 0);
+
+      console.log(this.$route);
+      if(this.$route.hash[0] !== '#'){
+        window.scrollTo(0, 0);
+      }
+       
     },
     initAnimations() {
       this.splittingTargets = document.querySelectorAll(
@@ -67,7 +72,7 @@ export default {
     leave: function (el, done) {
       console.log("leave");
       // done();
-      // window.scrollTo(0, 0);
+     
     },
     updateScroll() {
       [].forEach.call(this.splittingTargets, (target) => {

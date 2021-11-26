@@ -16,21 +16,21 @@
             url="https://www.twitter.com/thehederianmint"
           />
           <icon-link
-            title="Twitter"
-            icon="twitter"
-            url="https://www.twitter.com/thehederianmint"
+            title="Discord"
+            icon="discord"
+            url="#"
           />
         </div>
         <div class="col-xs-6">
           <icon-link
-            title="Twitter"
-            icon="twitter"
-            url="https://www.twitter.com/thehederianmint"
+            title="Mail"
+            icon="mail"
+            url="#contact"
           />
           <icon-link
-            title="Twitter"
-            icon="twitter"
-            url="https://www.twitter.com/thehederianmint"
+            title="Instagram"
+            icon="instagram"
+            url="https://www.instagram.com/thehederianmint"
           />
         </div>
       </div>

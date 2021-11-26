@@ -2,6 +2,7 @@
   <div class="card">
     <div>
       <div class="card__header ratio-16x9">
+
         <div
           class="card__visual ratio-16x9"
           :style="{
@@ -22,6 +23,10 @@
         ><div class="video-error">Unable to play video on this device</div>
         </video>
           </div>
+
+                  <div class="card__id">
+          ID: {{data.token_id}}
+        </div>
       </div>
 
       <div class="card__body">
@@ -69,6 +74,14 @@
   &__header {
     position: relative;
     overflow: hidden;
+  }
+
+  &__id {
+    position: absolute;
+    font-family: $heading-font;
+    top: 10px;
+    left: 16px;
+    font-size: 16px;
   }
 
   &__visual {
