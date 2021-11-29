@@ -8,7 +8,7 @@
               The Hederian Mint
             </h2>
             <h1 class="fs-5xl" data-aos='splitting'>
-              Silver and golden coins for Hederians
+              Exclusive NFTs for true Hederians
             </h1>
           </div>
         </div>
