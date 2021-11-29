@@ -1,28 +1,35 @@
 // typography
 
 @font-face {
+  font-family: "Georgia-fallback";
+  src: local("Georgia");
+  font-weight: 100;
+  size-adjust: 81.25%;
+  descent-override: 125%;
+  ascent-override: 125%;
+}
+
+@font-face {
   font-family: "Arno Pro";
-  src: url("~@/fonts/ArnoProLightDisplay.otf") format("opentype");
-  // src: url("..\\..\\fonts\\ArnoProLightDisplay.otf") format("opentype");
+  src: url("~@/fonts/ArnoPro-LightDisplay.woff2") format("woff2");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Metropolis";
-  src: url("~@/fonts/Metropolis-Regular.otf") format("opentype");
-  // src: url("..\\..\\fonts\\Metropolis-Regular.otf") format("opentype");
+  src: url("~@/fonts/Metropolis-Regular.woff2") format("woff2");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Metropolis";
-  src: url("~@/fonts/Metropolis-Medium.otf") format("opentype");
-  // src: url("..\\..\\fonts\\Metropolis-Regular.otf") format("opentype");
+  src: url("~@/fonts/Metropolis-Medium.woff2") format("woff2");
   font-weight: 500;
 }
 
 $base-font: "Metropolis", Helvetica, Arial, sans-serif;
-$heading-font: "Arno Pro", Garamond, Georgia, "Times New Roman", sans-serif;
+$heading-font: "Arno Pro", "Georgia-fallback", Georgia, "Times New Roman",
+  sans-serif;
 
 $fs-6xl: (
   null: (
