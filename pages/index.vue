@@ -26,7 +26,7 @@
           </div>
         </div>
       </Container>
-      <div id="contact"></div>
+
     </Section>
 
 
@@ -80,7 +80,7 @@
           </div>
         </div>
       </Container>
-      
+            <div id="contact"></div>
     </Section>
 
   </main>

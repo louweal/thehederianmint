@@ -57,6 +57,7 @@
 
         </div>
       </Container>
+  <div id="contact"></div>
     </Section>
   </main>
 </template>
