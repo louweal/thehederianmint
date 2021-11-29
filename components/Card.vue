@@ -8,9 +8,15 @@
           :style="{
             backgroundImage: `url(` + require(`~/images/${data.image}`) + `)`,
           }"
-        />
+        >
+          <div class="card__play">
+          <div>
+            <i class="icon-360"/> <span class="hide--xs display--l">Hover</span> <span class="hide--l">Click</span> to view in 3D
+          </div>
+        </div>
+        </div>
 
-                <div
+        <div
           class="card__video">
         <video
           playsinline
@@ -24,13 +30,15 @@
         </video>
           </div>
 
-                  <div class="card__id">
+                  <!-- <div class="card__id">
           ID: {{data.token_id}}
-        </div>
+        </div> -->
+
+
       </div>
 
       <div class="card__body">
-        <h3 class="fs-3xl">{{ data.name }}</h3>
+        <h3 class="fs-3xl">{{data.token_id}}. {{ data.name }}</h3>
         <p>{{ data.intro }}</p>
       </div>
     </div>
@@ -58,22 +66,32 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // opacity: 0;
-  // transform: translateY(40px);
   transition: background-color 0.3s 0.1s ease-in;
 
-  &:hover .card__header div:nth-of-type(1):not(:last-child) {
+  &:hover .card__header .card__visual {
     opacity: 0;
-    // transform: scale(105%);
   }
 
-  &:hover .card__header div:nth-of-type(2) {
+  &:hover .card__header .card__video {
     opacity: 1;
   }
 
   &__header {
     position: relative;
     overflow: hidden;
+  }
+
+  &__play {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px 7px;
+    text-transform: uppercase;
+    font-family: $base-font;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.7;
   }
 
   &__id {
@@ -104,8 +122,7 @@
     transition: opacity 0.6s ease-in;
 
     video {
-    // width: 100%;
-    height: 120%;
+      height: 120%;
     }
   }
 
@@ -130,6 +147,8 @@
     background-color: rgba(#403345, 0.4); //rgba(#000, 0.2);
     cursor: pointer;
   }
+
+
 }
 </style>
 

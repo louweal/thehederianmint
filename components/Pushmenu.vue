@@ -6,10 +6,10 @@
       </li>
       <li class="delay-200" @click="togglePushmenu">
         <!-- <a href="#about" class="fs-5xl">About</a> -->
-        <NuxtLink :to="{ path: '/', hash:'#about'}" class="fs-5xl">About</NuxtLink>
+        <NuxtLink to="/about" class="fs-5xl">About</NuxtLink>
       </li>
       <li class="delay-400" @click="togglePushmenu">
-        <NuxtLink to="/coins" class="fs-5xl">NFTs</NuxtLink>
+        <NuxtLink to="/nft" class="fs-5xl">NFTs</NuxtLink>
       </li>
       <li class="delay-600" @click="togglePushmenu">
         <NuxtLink to="#contact" class="fs-5xl">Contact</NuxtLink>

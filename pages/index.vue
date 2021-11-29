@@ -6,18 +6,19 @@
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
-            <h2 class="fs-4xl" data-aos="splitting">Most popular</h2>
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Newest</h2>
+            <p class="f-no-margin"><i>The First Set</i></p>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button title="All" url="/coins" modifier="secondary" />
+            <Button title="All NFTs" url="/coins" modifier="secondary" />
           </div>
         </div>
 
         <div class="grid">
           <div
-            v-for="(item, index) in popularTokens"
+            v-for="(item, index) in newTokens"
             :key="item.ID"
-            :class="`delay-l-${(index % 3) * 200}`"
+            :class="`delay-${(index % 3) * 200}`"
             class="col-xs-12 col-l-4"
             data-aos="fade-in-up"
           >
@@ -25,14 +26,15 @@
           </div>
         </div>
       </Container>
-      
+      <div id="contact"></div>
     </Section>
+
+
 
     <Section>
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-12 col-l-4 offset-l-1">
-            <div id="about"></div>
             <h2 class="fs-4xl" data-aos="splitting">About</h2>
 
             <p data-aos="fade-in-up">
@@ -59,18 +61,18 @@
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
-            <h2 class="fs-4xl" data-aos="splitting">New</h2>
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Most popular</h2>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button title="All" url="/coins" modifier="secondary" />
+            <Button title="All NFTs" url="/coins" modifier="secondary" />
           </div>
         </div>
 
         <div class="grid">
           <div
-            v-for="(item, index) in newTokens"
+            v-for="(item, index) in popularTokens"
             :key="item.ID"
-            :class="`delay-${(index % 3) * 200}`"
+            :class="`delay-l-${(index % 3) * 200}`"
             class="col-xs-12 col-l-4"
             data-aos="fade-in-up"
           >
@@ -78,8 +80,9 @@
           </div>
         </div>
       </Container>
-      <div id="contact"></div>
+      
     </Section>
+
   </main>
 </template>
 

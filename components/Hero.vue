@@ -109,6 +109,10 @@ export default {
 
     video {
       height: 110vh;
+
+      @include from(l) {
+        height: auto;
+      }
     }
 
     @include from(l) {

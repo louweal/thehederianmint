@@ -7,7 +7,7 @@
             <h2 class="fs-2xl f-base fade-in-up delay-1250">
               Non-fungible tokens
             </h2>
-            <h1 class="fs-5xl" ref="splitting">
+            <h1 class="fs-5xl" data-aos="splitting">
               Find the perfect coin for your inner hbarbarian
             </h1>
           </div>
@@ -19,6 +19,16 @@
 
     <Section>
       <Container>
+
+        <div class="grid collapse align-l-middle no-bottom-margin-cols">
+          <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
+              <h2 class="fs-4xl" data-aos="splitting">The First Set</h2>
+          </div>
+          <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
+            Release date: Dec 1st 2021 
+          </div>  
+        </div>
+        <br><br>
         <div class="grid">
           <div
             v-for="(item, index) in $options.tokens"
@@ -33,59 +43,46 @@
             <ActionCard />
           </div>
         </div>
+
+
+
       </Container>
-          <div id="contact"></div>
+          
     </Section>
+    
+        <Section>
+      <Container>
+        <div class="grid collapse align-l-middle no-bottom-margin-cols">
+          <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
+              <h2 class="fs-4xl" data-aos="splitting">The Second Set</h2>
+          </div>
+          <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
+            Release date: TBA
+          </div>  
+        </div>
+        <br><br>
+      </Container>
+      <div id="contact"></div>
+        </Section>
   </main>
 </template>
 
 <script>
-import Header from "./../components/Header";
-import Footer from "./../components/Footer";
-import Hero from "./../components/Hero.vue";
-import Section from "./../components/Section.vue";
 import tokens from "./../data/tokens.json";
 
-let Splitting = null;
-
-if (process.client) {
-  Splitting = require("splitting");
-}
-
 export default {
-  name: "Main",
+  name: "Coins",
 
-  components: { Header, Hero, Section, Footer },
   transition: "home",
 
   tokens: tokens,
-
-  methods: {
-    initSplitting: function (target) {
-      Splitting({
-        target: target,
-        by: "chars",
-        key: null,
-      });
-    },
-  },
-  mounted() {
-    let target = this.$refs["splitting"];
-    this.initSplitting(target);
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-.bg {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(#403345, 1) 100%
-  );
+
+.grid::v-deep .col-xs-12:first-child .card .card__video {
+  opacity: 1 !important;
 }
+
 </style>
