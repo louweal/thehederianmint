@@ -33,7 +33,7 @@
           <!-- <Button title="Visit GoMint" url="https://www.gomint.me/" /> -->
           <Button
             title="Browse nfts"
-            url="/coins"
+            url="/nft"
             modifier="secondary"
             class="fade-in-up delay-1250"
           />

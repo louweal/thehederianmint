@@ -10,7 +10,7 @@
             <p class="f-no-margin"><i>The First Set</i></p>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button title="All NFTs" url="/coins" modifier="secondary" />
+            <Button title="All NFTs" url="/nft" modifier="secondary" />
           </div>
         </div>
 
@@ -64,7 +64,7 @@
             <h2 class="fs-4xl f-no-margin" data-aos="splitting">Most popular</h2>
           </div>
           <div class="col-xs-5 align-xs-end">
-            <Button title="All NFTs" url="/coins" modifier="secondary" />
+            <Button title="All NFTs" url="/nft" modifier="secondary" />
           </div>
         </div>
 
