@@ -25,7 +25,6 @@
 
 .button {
   background-color: #b8ac84; //get-color("primary");
-  padding: 9px 22px 6px 22px;
   color: #000;
   display: inline-block;
   transition: all 0.3s ease-in;
@@ -35,6 +34,7 @@
   border-style: solid;
   outline: none;
   border-width: 0px;
+  padding: 9px 22px 6px 22px;
 
   @include from(l) {
     padding: 9px 25px 7px 25px;

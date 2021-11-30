@@ -6,7 +6,6 @@
     <Pushmenu />
     <transition
       v-on:before-enter="beforeEnter"
-      v-on:enter="enter"
       v-on:after-enter="afterEnter"
       v-on:leave="leave"
     >

@@ -9,14 +9,11 @@
             Submit your questions and suggestions using the contact form, or
             reach out through Twitter, Instagram or Discord.
           </p>
-
-          <!-- <p>
-            Nulla sit condimentum morbi pulvinar leo velit ultrices. Vitae ipsum
-            posuere netus nibh vitae. Ut risus quis non.
-          </p> -->
         </div>
         <div class="col-xs-12 col-l-3">
           <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact" />
+
             <p>
               <label>
                 <input type="email" name="email" placeholder="E-mail"
@@ -66,7 +63,7 @@
           />
         </div>
         <div class="col-xs-12">
-          <p>© {{ new Date().getFullYear() }} The Hederian Mint</p>
+          <p class="footer__copyright">© {{ new Date().getFullYear() }} The Hederian Mint</p>
         </div>
       </div>
     </Container>
@@ -80,6 +77,15 @@
 
   p {
     font-size: 16px;
+  }
+
+  &__copyright {
+    font-size: 0.85rem;
+    opacity: 0.5;
+  }
+
+  .fs-3xl {
+    margin-bottom: 2rem;
   }
 }
 
@@ -130,18 +136,15 @@ textarea {
 button.button {
   opacity: 0.75;
   transition: opacity 0.3s ease-in;
+  padding: 11px 22px 13px 22px !important;
+  font-weight: 500;
+
+  @include from(l) {
+    padding: 11px 25px 13px 25px !important;
+  }
 
   &:hover {
     opacity: 1;
   }
 }
 </style>
-
-<script>
-import IconLink from "./IconLink";
-// import IconLink from "./IconLink.vue";
-
-export default {
-  components: { IconLink },
-};
-</script>

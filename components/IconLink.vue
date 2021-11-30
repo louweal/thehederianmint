@@ -21,7 +21,7 @@
   width: 100%;
   height: 38px;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 0.7rem 0;
   column-gap: 20px;
   transition: all 0.3s ease-in;
   color: rgba(#fff, 0.75);

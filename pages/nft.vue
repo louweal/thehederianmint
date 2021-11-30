@@ -4,16 +4,16 @@
       <Container>
         <div class="grid collapse">
           <div class="col-xs-11 col-l-5">
-            <h2 class="fs-2xl f-base fade-in-up delay-1250">
+            <!-- <h2 class="fs-2xl f-base fade-in-up">
               Non-fungible tokens
-            </h2>
+            </h2> -->
             <h1 class="fs-5xl" data-anim="splitting">
               Find the perfect coin for your inner hbarbarian
             </h1>
           </div>
         </div>
 
-        <hr />
+        <hr class="fade-in-up delay-500" />
       </Container>
     </Section>
 

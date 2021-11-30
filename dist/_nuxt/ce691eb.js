@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{261:function(o,w,n){o.exports=n.p+"videos/whale-gold.57a7703.mp4"}}]);
