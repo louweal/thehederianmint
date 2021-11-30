@@ -7,7 +7,7 @@
             <h2 class="fs-2xl f-base fade-in-up delay-1250">
               The Hederian Mint
             </h2>
-            <h1 class="fs-5xl" data-aos='splitting'>
+            <h1 class="fs-5xl" data-anim='splitting'>
               Exclusive NFTs for true Hederians
             </h1>
           </div>
@@ -21,9 +21,9 @@
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-12 col-l-4 offset-l-1">
-            <h2 class="fs-4xl" data-aos="splitting">About</h2>
+            <h2 class="fs-4xl" data-anim="splitting">About</h2>
 
-            <p data-aos="fade-in-up">
+            <p data-anim="fade-in-up">
               The Hederian Mint was founded on 9 November 2021 in Leiden by
               Anneloes Louwe, a UX-designer and front-end developer by day and
               creative Hedera enthousiast by night.

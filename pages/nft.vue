@@ -7,7 +7,7 @@
             <h2 class="fs-2xl f-base fade-in-up delay-1250">
               Non-fungible tokens
             </h2>
-            <h1 class="fs-5xl" data-aos="splitting">
+            <h1 class="fs-5xl" data-anim="splitting">
               Find the perfect coin for your inner hbarbarian
             </h1>
           </div>
@@ -22,7 +22,7 @@
 
         <div class="grid collapse align-l-middle no-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
-              <h2 class="fs-4xl" data-aos="splitting">The First Set</h2>
+              <h2 class="fs-4xl" data-anim="splitting">The First Set</h2>
           </div>
           <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
             Release date: Dec 1st 2021 

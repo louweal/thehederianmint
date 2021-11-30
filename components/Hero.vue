@@ -8,8 +8,6 @@
           loop
           autoplay
           src="../videos/whale-gold.mp4"
-          data-src-mobile="mobile.mp4"
-          data-src-desktop="desktop.mp4"
         >
           <div class="video-error">Unable to play video on this device</div>
         </video>
@@ -18,7 +16,7 @@
     <Container>
       <div class="grid no-bottom-margin-cols">
         <div class="col-xs-12 col-l-6 offset-l-1">
-          <h1 class="fs-6xl" ref="split-chars">
+          <h1 class="fs-6xl" data-anim="splitting">
             Take your hbarbarianism to the next level
           </h1>
         </div>
@@ -46,32 +44,8 @@
 </template>
 
 <script>
-import Container from "./../components/Container";
-import Button from "./../components/Button";
-
-let Splitting = null;
-
-if (process.client) {
-  Splitting = require("splitting");
-}
-
 export default {
   name: "Hero",
-
-  components: { Container, Button },
-
-  methods: {
-    initSplitting: function (target) {
-      Splitting({
-        target: target,
-        by: "chars",
-        key: null,
-      });
-    },
-  },
-  mounted() {
-    this.initSplitting(this.$refs["split-chars"]);
-  },
 };
 </script>
 

@@ -7,6 +7,7 @@
     <transition
       v-on:before-enter="beforeEnter"
       v-on:enter="enter"
+      v-on:after-enter="afterEnter"
       v-on:leave="leave"
     >
       <Nuxt />
@@ -28,54 +29,83 @@ export default {
 
   data: function () {
     return {
-      splittingTargets: [],
-      appearingTargets: [],
+      animSplitting: [],
+      aosSplitting: [],
+      animFadeInUp: [],
+      aosFadeInUp: [],
     };
   },
 
   methods: {
     beforeEnter: function (el) {
-      console.log("before enter");
-
-      console.log(this.$route);
       if(this.$route.hash[0] !== '#'){
         window.scrollTo(0, 0);
       }
        
     },
     initAnimations() {
-      this.splittingTargets = document.querySelectorAll(
+
+
+      let allTargets = document.querySelectorAll(
+        "[data-aos='splitting'], [data-aos='fade-in-up'], [data-anim='splitting'], [data-anim='fade-in-up']"
+      );
+      [].forEach.call(allTargets, (target) => {
+        // hide all targets
+        target.style.opacity = "0";
+      });
+
+
+      this.aosSplitting = document.querySelectorAll(
         "[data-aos='splitting']"
       );
-      [].forEach.call(this.splittingTargets, (target) => {
-        // hide all targets
-        target.style.opacity = "0";
-      });
 
-      this.appearingTargets = document.querySelectorAll(
+      this.aosFadeInUp = document.querySelectorAll(
         "[data-aos='fade-in-up']"
       );
-      [].forEach.call(this.appearingTargets, (target) => {
-        // hide all targets
-        target.style.opacity = "0";
-      });
 
-      window.addEventListener("scroll", this.updateScroll);
-      // also run the function once directly
-      this.updateScroll();
+      this.animSplitting = document.querySelectorAll(
+     "[data-anim='splitting']"
+      );
+      this.animFadeInUp = document.querySelectorAll(
+     "[data-anim='fade-in-up']"
+      );
+
+      window.addEventListener("scroll", this.aosSplittingFun);
+      window.addEventListener("scroll", this.aosFadeInUpFun);
+
+
+      this.aosSplittingFun();
+      this.aosFadeInUpFun();
+      this.animSplittingFun();
+      this.animFadeInUpFun();
     },
 
-    enter: function (el, done) {
-      console.log("enter");
+    afterEnter: function (el, done) {
+      // console.log("enter");
       this.initAnimations();
     },
     leave: function (el, done) {
-      console.log("leave");
+      // console.log("leave");
       // done();
      
     },
-    updateScroll() {
-      [].forEach.call(this.splittingTargets, (target) => {
+    animSplittingFun() {
+      [].forEach.call(this.animSplitting, (target) => {
+        if (!target.classList.contains("splitting")) {
+            target.style.opacity = "1";
+            this.initSplitting(target);
+          }
+      })
+    },
+    animFadeInUpFun() {
+      [].forEach.call(this.animFadeInUp, (target) => {
+          if (!target.classList.contains("fade-in-up")) {
+            target.classList.add("fade-in-up");
+          }
+      });
+    },
+    aosSplittingFun() {
+      [].forEach.call(this.aosSplitting, (target) => {
         var rect = target.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
@@ -91,19 +121,19 @@ export default {
           }
         }
       });
-
-      //fade in up animation
-      // console.log(this.appearingTargets);
-      [].forEach.call(this.appearingTargets, (target) => {
+    },
+    
+    aosFadeInUpFun() {
+      [].forEach.call(this.aosFadeInUp, (target) => {
         var rect = target.getBoundingClientRect();
         var elemTop = rect.top;
         var elemBottom = rect.bottom;
 
         // "top 70%"
+
         var isVisible = elemTop < window.innerHeight * 0.9; // && elemBottom >= 0;
 
         if (isVisible) {
-          // start animation
           if (!target.classList.contains("fade-in-up")) {
             target.classList.add("fade-in-up");
           }
@@ -124,9 +154,10 @@ export default {
   },
 
   beforeDestroy() {
-    window.removeEventListener("scroll", this.updateScroll);
+    window.removeEventListener("scroll", this.aosSplittingFun);
+    window.removeEventListener("scroll", this.aosFadeInUpFun);
 
-    [].forEach.call(this.appearingTargets, (target) => {
+    [].forEach.call(this.aosFadeInUp, (target) => {
       if (target.classList.contains("fade-in-up")) {
         target.classList.remove("fade-in-up");
       }
@@ -134,17 +165,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-// .bg {
-//   position: fixed;
-//   width: 100vw;
-//   height: 100vh;
-//   z-index: -1;
-//   background: linear-gradient(
-//     180deg,
-//     rgba(0, 0, 0, 1) 30%,
-//     rgba(#403345, 1) 100%
-//   );
-// }
-</style>
