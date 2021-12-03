@@ -2,7 +2,6 @@
   <div class="card">
     <div>
       <div class="card__header ratio-16x9">
-
         <div
           class="card__visual ratio-16x9"
           :style="{
@@ -10,35 +9,33 @@
           }"
         >
           <div class="card__play">
-          <div>
-            <i class="icon-360"/> <span class="hide--xs display--l">Hover</span> <span class="hide--l">Click</span> to view in 3D
+            <div>
+              <i class="icon-360" />
+              <span class="hide--xs display--l">Hover</span>
+              <span class="hide--l">Click</span> to view in 3D
+            </div>
           </div>
         </div>
+
+        <div class="card__video">
+          <video
+            playsinline
+            muted
+            loop
+            autoplay
+            :src="require(`~/videos/${data.video}`)"
+          >
+            <div class="video-error">Unable to play video on this device</div>
+          </video>
         </div>
 
-        <div
-          class="card__video">
-        <video
-          playsinline
-          muted
-          loop
-          autoplay
-          src="../videos/whale-gold.mp4"
-          data-src-mobile="mobile.mp4"
-          data-src-desktop="desktop.mp4"
-        ><div class="video-error">Unable to play video on this device</div>
-        </video>
-          </div>
-
-                  <!-- <div class="card__id">
+        <!-- <div class="card__id">
           ID: {{data.token_id}}
         </div> -->
-
-
       </div>
 
       <div class="card__body">
-        <h3 class="fs-3xl">{{data.token_id}}. {{ data.name }}</h3>
+        <h3 class="fs-3xl">{{ data.token_id }}. {{ data.name }}</h3>
         <p>{{ data.intro }}</p>
       </div>
     </div>
@@ -103,11 +100,10 @@
   }
 
   &__visual {
-        position: absolute;
+    position: absolute;
     background-size: cover;
     background-position: center;
     transition: opacity 0.6s ease-in;
-    
   }
 
   &__video {
@@ -147,8 +143,6 @@
     background-color: rgba(#403345, 0.4); //rgba(#000, 0.2);
     cursor: pointer;
   }
-
-
 }
 </style>
 

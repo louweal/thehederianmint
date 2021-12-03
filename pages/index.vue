@@ -7,7 +7,7 @@
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
             <h2 class="fs-4xl f-no-margin" data-aos="splitting">Newest</h2>
-            <p class="f-no-margin"><i>The First Set</i></p>
+            <!-- <p class="f-no-margin"><i>The First Set</i></p> -->
           </div>
           <div class="col-xs-5 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
@@ -26,18 +26,17 @@
           </div>
         </div>
       </Container>
-
     </Section>
 
-
-
-  <AboutSection />
+    <AboutSection />
 
     <Section>
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Most popular</h2>
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">
+              Most popular
+            </h2>
           </div>
           <div class="col-xs-5 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
@@ -56,9 +55,8 @@
           </div>
         </div>
       </Container>
-            <div id="contact"></div>
+      <div id="contact"></div>
     </Section>
-
   </main>
 </template>
 
@@ -75,10 +73,14 @@ export default {
 
   computed: {
     popularTokens() {
-      return this.$options.tokens.filter((x) => x.popular !== false).sort((a, b) => (a.popular > b.popular) ? 1 : -1);
+      return this.$options.tokens
+        .filter((x) => x.popular !== false)
+        .sort((a, b) => (a.popular > b.popular ? 1 : -1));
     },
     newTokens() {
-      return this.$options.tokens.filter((x) => x.new !== false).sort((a, b) => (a.new > b.new) ? 1 : -1);
+      return this.$options.tokens
+        .filter((x) => x.new !== false)
+        .sort((a, b) => (a.new > b.new ? 1 : -1));
     },
   },
 };

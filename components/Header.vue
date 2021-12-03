@@ -77,11 +77,11 @@ export default {
   methods: {
     togglePushmenu() {
       let pushmenu = document.querySelector(".pushmenu");
-      console.log(pushmenu);
+      // console.log(pushmenu);
       pushmenu.classList.toggle("pushmenu--active");
 
       let hamburger = document.querySelector(".hamburger");
-      console.log(hamburger);
+      // console.log(hamburger);
       hamburger.classList.toggle("hamburger--active");
     },
   },
