@@ -59,7 +59,7 @@
           <icon-link
             title="Discord"
             icon="discord"
-            url="https://www.discord.com"
+            url="https://discord.gg/6tqhdNRT6E"
           />
         </div>
         <div class="col-xs-12">

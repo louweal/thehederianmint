@@ -18,7 +18,7 @@
           <icon-link
             title="Discord"
             icon="discord"
-            url="#"
+            url="https://discord.gg/6tqhdNRT6E"
           />
         </div>
         <div class="col-xs-6">

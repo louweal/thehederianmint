@@ -11,6 +11,7 @@
     <a
       v-else
       class="button"
+      :href="url"
       :class="{ 'button--secondary': modifier === 'secondary' }"
     >
       {{ title }}
