@@ -22,10 +22,10 @@
 
         <div class="grid collapse align-l-middle no-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
-              <h2 class="fs-4xl" data-anim="splitting">The First Set</h2>
+              <h2 class="fs-4xl" data-anim="splitting">Alpha Series</h2>
           </div>
           <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
-            Release date: Dec 1st 2021 
+            Release date: Dec 7nd 2021 
           </div>  
         </div>
         <br><br>
@@ -54,7 +54,7 @@
       <Container>
         <div class="grid collapse align-l-middle no-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
-              <h2 class="fs-4xl" data-aos="splitting">The Second Set</h2>
+              <h2 class="fs-4xl" data-aos="splitting">Beta Series</h2>
           </div>
           <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
             Release date: TBA
@@ -81,8 +81,8 @@ export default {
 
 <style lang="scss" scoped>
 
-.grid::v-deep .col-xs-12:first-child .card .card__video {
-  opacity: 1 !important;
-}
+// .grid::v-deep .col-xs-12:first-child .card .card__video {
+//   opacity: 1 !important;
+// }
 
 </style>
