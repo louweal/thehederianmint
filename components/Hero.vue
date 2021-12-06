@@ -2,13 +2,7 @@
   <div class="hero">
     <div class="hero__bg">
       <div class="hero__bgvideo">
-        <video
-          playsinline
-          muted
-          loop
-          autoplay
-          src="../videos/whale-gold.mp4"
-        >
+        <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
           <div class="video-error">Unable to play video on this device</div>
         </video>
       </div>
@@ -60,7 +54,7 @@ export default {
   overflow: hidden;
 
   @include from(l) {
-     height: calc(100vh - 108px);
+    height: calc(100vh - 108px);
   }
 
   &__bg {
@@ -90,9 +84,9 @@ export default {
     }
 
     @include from(l) {
-    max-width: 1137px;
-    max-height: 720px;
-    filter: brightness(0.8);      
+      max-width: 1137px;
+      max-height: 720px;
+      filter: brightness(0.8);
     }
   }
 }
