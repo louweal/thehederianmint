@@ -45,7 +45,7 @@
 
       <div v-if="inStock">
         <span class="price">{{ data.price }} HBAR</span>
-        <Button title="Buy" url="#" />
+        <Button title="Buy" :url="data.url" />
       </div>
       <div v-else>SOLD OUT</div>
     </div>

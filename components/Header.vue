@@ -13,7 +13,7 @@
           </NuxtLink>
         </div>
         <div class="col-xs-4 align-xs-end hide--xs display--l">
-          <Button title="Visit GoMint" url="https://www.gomint.me/" />
+          <Button title="Visit GoMint" url="https://gomint.me/gallery/?creator=H190555" />
         </div>
       </div>
     </Container>
