@@ -81,8 +81,4 @@ export default {
 
 <style lang="scss" scoped>
 
-// .grid::v-deep .col-xs-12:first-child .card .card__video {
-//   opacity: 1 !important;
-// }
-
 </style>

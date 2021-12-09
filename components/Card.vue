@@ -41,11 +41,11 @@
     </div>
 
     <div class="card__footer">
-      <StockIndicator :current="data.stock.current" :max="data.stock.max" />
+      <StockIndicator :current="gomint.supply.status.on_sale" :max="data.stock.max" />
 
       <div v-if="inStock">
         <span class="price">{{ data.price }} HBAR</span>
-        <Button title="Buy" :url="data.url" />
+        <Button title="Buy" :url="`https://gomint.me/gallery/?network=mainnet&tokenId=${data.gomint_id}`" />
       </div>
       <div v-else>SOLD OUT</div>
     </div>
@@ -158,10 +158,32 @@ export default {
     },
   },
 
+  data () {
+    return {
+      gomint: {
+        "supply": {
+          "status": {
+            "on_sale": 0
+          }
+        }
+      },
+    }
+  },
+
   computed: {
     inStock() {
-      return this.data.stock.current > 0;
+      return this.gomint.supply.status.on_sale > 0;
     },
+  },
+
+  async mounted () {
+
+    //https://gomint.me/saas/v1/token/supply.php?tokenId=0.0.609762
+      let response = await fetch(`https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`)
+      
+      let gomint = await response.json()
+      console.log(gomint);
+      this.gomint = gomint
   },
 };
 </script>
