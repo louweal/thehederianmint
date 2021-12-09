@@ -177,13 +177,9 @@ export default {
   },
 
   async mounted () {
-
-    //https://gomint.me/saas/v1/token/supply.php?tokenId=0.0.609762
-      let response = await fetch(`https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`)
-      
-      let gomint = await response.json()
-      console.log(gomint);
-      this.gomint = gomint
+    let response = await fetch(`https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`)
+    let gomint = await response.json()
+    this.gomint = gomint
   },
 };
 </script>
