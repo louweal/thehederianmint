@@ -14,7 +14,7 @@
               unique design. A small set of exclusive coins is released only once each month. 
               You can also suggest your own ideas.
             </p>
-            <p>Behind the scenes The Hederian Mint is also working on physical products. Stay tuned for more information!</p>
+            <p data-anim="fade-in-up">Behind the scenes The Hederian Mint is also working on physical products. Stay tuned for more information!</p>
 
           </div>
           <div class="col-xs-12 offset-l-2 col-l-5">
