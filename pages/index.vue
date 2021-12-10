@@ -55,6 +55,8 @@
           </div>
         </div>
       </Container>
+      
+
       <div id="contact"></div>
     </Section>
   </main>
@@ -75,7 +77,7 @@ export default {
     popularTokens() {
       return this.$options.tokens
         .filter((x) => x.popular !== false)
-        .sort((a, b) => (a.popular > b.popular ? 1 : -1));
+        .sort((a, b) => ((a.stock.max - a.stock.current) < (b.stock.max - b.stock.current) ? 1 : -1));
     },
     newTokens() {
       return this.$options.tokens

@@ -2,9 +2,9 @@
   <div class="hero">
     <div class="hero__bg">
       <div class="hero__bgvideo">
-        <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
+        <!-- <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
           <div class="video-error">Unable to play video on this device</div>
-        </video>
+        </video> -->
       </div>
     </div>
     <Container>

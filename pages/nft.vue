@@ -52,12 +52,15 @@
     
         <Section>
       <Container>
-        <div class="grid collapse align-l-middle no-bottom-margin-cols">
+        <div class="grid collapse align-l-middle xxxno-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
               <h2 class="fs-4xl" data-aos="splitting">Beta Series</h2>
           </div>
-          <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
-            Release date: TBA
+          <div class="col-xs-12 col-l-5 align-xs-center align-l-end" data-aos="fade-in-up">
+            Release date: Nov 7th
+          </div>
+          <div class="col-xs-12" data-aos="fade-in-up">
+            Coming soon!
           </div>  
         </div>
         <br><br>

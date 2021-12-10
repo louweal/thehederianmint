@@ -26,7 +26,7 @@
             <h2 class="fs-4xl" data-aos="splitting">Release schedule</h2>
 
             <p data-aos="fade-in-up">
-              Coming soon
+              The Beta Set: Nov 7th 2021
             </p>
 
           </div>
@@ -47,7 +47,3 @@ export default {
 
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
