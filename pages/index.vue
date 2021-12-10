@@ -55,7 +55,40 @@
           </div>
         </div>
       </Container>
-      
+    </Section>
+
+    <Section>
+      <Container>
+                <div class="grid align-xs-middle collapse">
+          <div class="col-xs-6">
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">
+              Etsy Store
+            </h2>
+          </div>
+          <div class="col-xs-6 align-xs-end">
+            <Button title="Coming soon!" url="/nft" modifier="secondary" />
+          </div>
+        </div>
+
+        <div class="grid collapse no-bottom-margin-cols" data-aos="fade-in-up">
+          <div class="col-xs-12 col-l-6">
+            <div
+              class="img ratio-16x9"
+              :style="{
+                backgroundImage: `url(` + require(`~/images/hbar-3d.png`) + `)`,
+              }"
+            />
+          </div>
+          <div class="col-xs-12 col-l-6">
+            <div
+              class="img ratio-16x9"
+              :style="{
+                backgroundImage: `url(` + require(`~/images/elephant-3d.png`) + `)`,
+              }"
+            />
+          </div>
+        </div>
+      </Container>      
 
       <div id="contact"></div>
     </Section>
