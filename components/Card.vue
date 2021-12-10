@@ -163,7 +163,7 @@ export default {
       gomint: {
         "supply": {
           "status": {
-            "on_sale": 0
+            "on_sale": this.data.stock.max
           }
         }
       },
