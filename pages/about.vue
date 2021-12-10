@@ -3,12 +3,12 @@
     <Section>
       <Container>
         <div class="grid collapse">
-          <div class="col-xs-11 col-l-5">
+          <div class="col-xs-11 col-l-6">
             <!-- <h2 class="fs-2xl f-base fade-in-up xxxdelay-1250">
               The Hederian Mint
             </h2> -->
             <h1 class="fs-5xl" data-anim='splitting'>
-              Exclusive NFTs for true Hederians
+              Collectable bullion coins for Hederians and Hbarbarians
             </h1>
           </div>
         </div>
