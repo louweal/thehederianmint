@@ -26,7 +26,7 @@
             <h2 class="fs-4xl" data-aos="splitting">Release schedule</h2>
 
             <p data-aos="fade-in-up">
-              The Beta Set: Nov 7th 2021
+              The Beta Set: Jan 7th 2022
             </p>
 
           </div>
