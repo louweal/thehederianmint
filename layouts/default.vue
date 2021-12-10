@@ -150,6 +150,16 @@ export default {
 
   mounted() {
     this.initAnimations();
+    let gaScript = document.createElement('script')
+    gaScript.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-HNSQMHP9VF')
+    document.head.appendChild(gaScript)
+    window.dataLayer = window.dataLayer || [];
+    
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-HNSQMHP9VF');
   },
 
   beforeDestroy() {
