@@ -41,11 +41,17 @@
     </div>
 
     <div class="card__footer">
-      <StockIndicator :current="gomint.supply.status.on_sale" :max="data.stock.max" />
+      <StockIndicator
+        :current="gomint.supply.status.on_sale"
+        :max="data.stock.max"
+      />
 
       <div v-if="inStock">
         <span class="price">{{ data.price }} HBAR</span>
-        <Button title="Buy" :url="`https://gomint.me/gallery/?network=mainnet&tokenId=${data.gomint_id}`" />
+        <Button
+          title="Buy"
+          :url="`https://gomint.me/gallery/?network=mainnet&tokenId=${data.gomint_id}`"
+        />
       </div>
       <div v-else>SOLD OUT</div>
     </div>
@@ -157,16 +163,20 @@ export default {
     },
   },
 
-  data () {
+  data() {
     return {
       gomint: {
-        "supply": {
-          "status": {
-            "on_sale": this.data.stock.max
-          }
-        }
+        supply: {
+          status: {
+            on_sale: this.data.stock.max,
+            unreleased: 0,
+            in_basket: 0,
+            sold_escrow: 0,
+            sold_private: 0,
+          },
+        },
       },
-    }
+    };
   },
 
   computed: {
@@ -175,10 +185,22 @@ export default {
     },
   },
 
-  async mounted () {
-    let response = await fetch(`https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`)
-    let gomint = await response.json()
-    this.gomint = gomint
+  async mounted() {
+    let response = await fetch(
+      `https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`
+    );
+    let gomint = await response.json();
+    this.gomint = gomint;
+
+    // console.log(this.data.name);
+    let earnings =
+      this.data.price *
+      0.9 *
+      (this.gomint.supply.status.sold_escrow +
+        this.gomint.supply.status.sold_private);
+    if (earnings > 0) {
+      console.log(this.data.gomint_id + ": " + earnings);
+    }
   },
 };
 </script>
