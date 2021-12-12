@@ -5,6 +5,13 @@
         <!-- <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
           <div class="video-error">Unable to play video on this device</div>
         </video> -->
+        <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
+          <!-- <source
+            src="../videos/elephant-gold-hero.hevc.mp4"
+            type='video/mp4; codecs="hvc1"'
+          /> -->
+          <source src="../videos/elephant.webm" type="video/webm" />
+        </video>
       </div>
     </div>
     <Container>
@@ -18,8 +25,8 @@
         <div class="col-xs-12 col-l-5 offset-l-1">
           <p class="fade-in-up delay-1000">
             Discover the very first set of exclusive high-quality HBAR coins
-            ever minted on the Hedera network. All our coins are manually
-            crafted and made with love.
+            ever minted on the Hedera network. Collectable bullion coins for
+            Hederians and Hbarbarians
           </p>
 
           <!-- <Button title="Visit GoMint" url="https://www.gomint.me/" /> -->
@@ -59,27 +66,35 @@ export default {
 
   &__bg {
     @include pin;
+    right: 8%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     // border: 3px solid plum;
+    z-index: 2324234235;
   }
 
   &__bgvideo {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    max-height: 100vh;
-    right: 0;
+    // height: 100vh;
+    // max-height: 100vh;
+    right: 53%;
     overflow: hidden;
-    filter: brightness(0.6);
+    // background-color: red;
+    // filter: brightness(0.6);
+    // border: 1px solid red;
 
     video {
-      height: 110vh;
+      height: 170vh;
+      // transform: scale(200%);
+      // background-color: yellow;
+      width: 100vw;
 
       @include from(l) {
-        height: auto;
+        // height: auto;
+        width: 65vw;
       }
     }
 
