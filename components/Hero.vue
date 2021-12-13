@@ -1,20 +1,25 @@
 <template>
   <div class="hero">
     <div class="hero__bg">
-      <div class="hero__bgvideo">
-        <!-- <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
-          <div class="video-error">Unable to play video on this device</div>
-        </video> -->
-        <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
-          <!-- <source
-            src="../videos/elephant-gold-hero.hevc.mp4"
-            type='video/mp4; codecs="hvc1"'
-          /> -->
-          <source src="../videos/elephant.webm" type="video/webm" />
-        </video>
+      <div class="hero__test">
+        <h2>Alpha<br />Set</h2>
       </div>
+      <div class="grid collapse no-bottom-margin-cols">
+        <div class="col-xs-3 col-l-6">
+          <Hero-Video />
+        </div>
+        <div class="col-xs-3 col-l-6">
+         <Hero-Video />
+        </div>
+        <div class="col-xs-3 col-l-6">
+          <Hero-Video />
+        </div>
+        <div class="col-xs-3 col-l-6">
+          <Hero-Video />  
+        </div>
+       </div>
     </div>
-    <Container>
+    <Container class="hero__inner">
       <div class="grid no-bottom-margin-cols">
         <div class="col-xs-12 col-l-6 offset-l-1">
           <h1 class="fs-6xl" data-anim="splitting">
@@ -64,44 +69,41 @@ export default {
     height: calc(100vh - 108px);
   }
 
-  &__bg {
-    @include pin;
-    right: 8%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    // border: 3px solid plum;
-    z-index: 2324234235;
+  &__inner {
+    button {
+      z-index: 2424235235;
+    }
   }
 
-  &__bgvideo {
+  &__bg {
+    @include pin;
+    display: flex;
+    justify-content: flex-end;
+    
+    // border: 3px solid plum;
+    // background-color: rgba(255,0,0,0.3);
+    // z-index: 2324234235;
+
+    @include from(l) {
+      align-items: center;
+      left: 40%;
+    }
+  }
+
+  &__test {
+    // border: 1px solid plum;
+    @include pin(); 
     display: flex;
     justify-content: center;
     align-items: center;
-    // height: 100vh;
-    // max-height: 100vh;
-    right: 53%;
-    overflow: hidden;
-    // background-color: red;
-    // filter: brightness(0.6);
-    // border: 1px solid red;
 
-    video {
-      height: 170vh;
-      // transform: scale(200%);
-      // background-color: yellow;
-      width: 100vw;
-
-      @include from(l) {
-        // height: auto;
-        width: 65vw;
-      }
-    }
-
-    @include from(l) {
-      max-width: 1137px;
-      max-height: 720px;
-      filter: brightness(0.8);
+    h2 {
+      font-size: 210px;
+      color: rgba(#b8ac84, 0.5); ////get-color(primary); // rgba(255, 255, 255, 1);
+      text-align: center;
+      line-height: 1;
+      z-index: -1;
+      transform: rotate(10deg);
     }
   }
 }
