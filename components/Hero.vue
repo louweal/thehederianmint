@@ -1,23 +1,52 @@
 <template>
   <div class="hero">
     <div class="hero__bg">
-      <div class="hero__test">
-        <h2>Alpha<br />Set</h2>
+      <div class="hero__token" ref="token">
+        <span class="hero__token__id">{{ id }}</span>
+        <span>{{ title }}</span>
+        <span>{{ priceSilver !== "" ? "SILVER" : "" }}</span>
+        <span class="hero__token__price">{{ priceSilver }}</span>
+        <span>{{ priceSilver !== "" ? "GOLD" : "" }}</span>
+        <span class="hero__token__price">{{ priceGold }}</span>
       </div>
       <div class="grid collapse no-bottom-margin-cols">
-        <div class="col-xs-3 col-l-6">
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#001', 'The Hederian Elephant', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
           <Hero-Video />
         </div>
-        <div class="col-xs-3 col-l-6">
-         <Hero-Video />
-        </div>
-        <div class="col-xs-3 col-l-6">
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#002', 'The Hederian Whale', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
           <Hero-Video />
         </div>
-        <div class="col-xs-3 col-l-6">
-          <Hero-Video />  
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#003', 'The Hederian Kangaroo', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
+          <Hero-Video />
         </div>
-       </div>
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#004', 'The Hederian Dutchman', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
+          <Hero-Video />
+        </div>
+      </div>
     </div>
     <Container class="hero__inner">
       <div class="grid no-bottom-margin-cols">
@@ -52,6 +81,35 @@
 <script>
 export default {
   name: "Hero",
+
+  data: function () {
+    return {
+      id: "",
+      title: "",
+      priceSilver: "",
+      priceGold: "",
+    };
+  },
+  watch: {
+    id: function (val) {
+      if (val !== "" && !this.$refs.token.classList.contains("fade-in-up")) {
+        this.$refs.token.classList.add("fade-in-up");
+      } else {
+        if (this.$refs.token.classList.contains("fade-in-up")) {
+          this.$refs.token.classList.remove("fade-in-up");
+        }
+      }
+    },
+  },
+
+  methods: {
+    updateInfo(id, title, priceSilver, priceGold) {
+      this.id = id;
+      this.title = title;
+      this.priceSilver = priceSilver;
+      this.priceGold = priceGold;
+    },
+  },
 };
 </script>
 
@@ -90,20 +148,32 @@ export default {
     }
   }
 
-  &__test {
+  &__token {
     // border: 1px solid plum;
     @include pin(); 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 
-    h2 {
-      font-size: 210px;
-      color: rgba(#b8ac84, 0.5); ////get-color(primary); // rgba(255, 255, 255, 1);
+    span {
+      margin-bottom: 10px;
+    }
+
+    &__id, &__title, &__price {
       text-align: center;
       line-height: 1;
-      z-index: -1;
-      transform: rotate(10deg);
+      color: rgba(#b8ac84, 0.9);
+    }
+
+    &__id {
+       font-size: 100px;
+      color: rgba(#b8ac84, 0.6);
+    }
+
+    &__title {
+      font-size: 120px;
     }
   }
 }

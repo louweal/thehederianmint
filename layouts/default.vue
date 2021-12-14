@@ -1,6 +1,13 @@
 <template>
   <div id="top">
-    <div class="bg"></div>
+    <div class="bg">
+      <Star
+        :x="Math.ceil(Math.random() * 100) + '%'"
+        :y="Math.ceil(Math.random() * 100) + '%'"
+        v-for="i in 20"
+        :key="i"
+      />
+    </div>
     <Header :fixed="true" />
 
     <Pushmenu />
@@ -11,7 +18,7 @@
     >
       <Nuxt />
     </transition>
-    
+
     <Footer />
   </div>
 </template>
@@ -32,19 +39,17 @@ export default {
       aosSplitting: [],
       animFadeInUp: [],
       aosFadeInUp: [],
+      aosFadeIn: [],
     };
   },
 
   methods: {
     beforeEnter: function (el) {
-      if(this.$route.hash[0] !== '#'){
+      if (this.$route.hash[0] !== "#") {
         window.scrollTo(0, 0);
       }
-       
     },
     initAnimations() {
-
-
       let allTargets = document.querySelectorAll(
         "[data-aos='splitting'], [data-aos='fade-in-up'], [data-anim='splitting'], [data-anim='fade-in-up']"
       );
@@ -53,25 +58,20 @@ export default {
         target.style.opacity = "0";
       });
 
+      let aosTargets = document.querySelectorAll("[data-aos]");
+      [].forEach.call(aosTargets, (target) => {
+        console.log(target.dataset.aos);
+      });
 
-      this.aosSplitting = document.querySelectorAll(
-        "[data-aos='splitting']"
-      );
+      this.aosSplitting = document.querySelectorAll("[data-aos='splitting']");
 
-      this.aosFadeInUp = document.querySelectorAll(
-        "[data-aos='fade-in-up']"
-      );
+      this.aosFadeInUp = document.querySelectorAll("[data-aos='fade-in-up']");
 
-      this.animSplitting = document.querySelectorAll(
-     "[data-anim='splitting']"
-      );
-      this.animFadeInUp = document.querySelectorAll(
-     "[data-anim='fade-in-up']"
-      );
+      this.animSplitting = document.querySelectorAll("[data-anim='splitting']");
+      this.animFadeInUp = document.querySelectorAll("[data-anim='fade-in-up']");
 
       window.addEventListener("scroll", this.aosSplittingFun);
       window.addEventListener("scroll", this.aosFadeInUpFun);
-
 
       this.aosSplittingFun();
       this.aosFadeInUpFun();
@@ -86,21 +86,20 @@ export default {
     leave: function (el, done) {
       // console.log("leave");
       // done();
-     
     },
     animSplittingFun() {
       [].forEach.call(this.animSplitting, (target) => {
         if (!target.classList.contains("splitting")) {
-            target.style.opacity = "1";
-            this.initSplitting(target);
-          }
-      })
+          target.style.opacity = "1";
+          this.initSplitting(target);
+        }
+      });
     },
     animFadeInUpFun() {
       [].forEach.call(this.animFadeInUp, (target) => {
-          if (!target.classList.contains("fade-in-up")) {
-            target.classList.add("fade-in-up");
-          }
+        if (!target.classList.contains("fade-in-up")) {
+          target.classList.add("fade-in-up");
+        }
       });
     },
     aosSplittingFun() {
@@ -121,7 +120,7 @@ export default {
         }
       });
     },
-    
+
     aosFadeInUpFun() {
       [].forEach.call(this.aosFadeInUp, (target) => {
         var rect = target.getBoundingClientRect();
@@ -150,16 +149,19 @@ export default {
 
   mounted() {
     this.initAnimations();
-    let gaScript = document.createElement('script')
-    gaScript.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-HNSQMHP9VF')
-    document.head.appendChild(gaScript)
+    let gaScript = document.createElement("script");
+    gaScript.setAttribute(
+      "src",
+      "https://www.googletagmanager.com/gtag/js?id=G-HNSQMHP9VF"
+    );
+    document.head.appendChild(gaScript);
     window.dataLayer = window.dataLayer || [];
-    
-    function gtag(){
+
+    function gtag() {
       dataLayer.push(arguments);
     }
-    gtag('js', new Date());
-    gtag('config', 'G-HNSQMHP9VF');
+    gtag("js", new Date());
+    gtag("config", "G-HNSQMHP9VF");
   },
 
   beforeDestroy() {

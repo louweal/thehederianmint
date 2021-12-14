@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" data-aos="fade-in-up">
     <Container>
       <div class="grid">
         <div class="col-xs-12 col-l-3">
@@ -9,6 +9,33 @@
             Submit your questions and suggestions using the contact form, or
             reach out through Twitter, Instagram or Discord.
           </p>
+
+          <ul class="inline">
+            <li>
+              <icon-link
+                title="Twitter"
+                icon="twitter"
+                url="https://www.twitter.com/thehederianmint"
+                modifier="inline"
+              />
+            </li>
+            <li>
+              <icon-link
+                title="Instagram"
+                icon="instagram"
+                url="https://www.instagram.com/thehederianmint"
+                modifier="inline"
+              />
+            </li>
+            <li>
+              <icon-link
+                title="Discord"
+                icon="discord"
+                url="https://discord.gg/6tqhdNRT6E"
+                modifier="inline"
+              />
+            </li>
+          </ul>
         </div>
         <div class="col-xs-12 col-l-3">
           <form name="contact" method="POST" data-netlify="true">
@@ -35,7 +62,11 @@
         <div class="col-xs-6 col-l-2 offset-l-1">
           <h4 class="fs-3xl">Shop</h4>
 
-          <icon-link title="GoMint" icon="gomint" url="https://gomint.me/gallery/?creator=H190555" />
+          <icon-link
+            title="GoMint"
+            icon="gomint"
+            url="https://gomint.me/gallery/?creator=H190555"
+          />
           <icon-link title="Etsy" icon="etsy" url="https://www.etsy.com" />
         </div>
         <div class="col-xs-6 col-l-2 offset-l-1">
@@ -63,7 +94,9 @@
           />
         </div>
         <div class="col-xs-12">
-          <p class="footer__copyright">© {{ new Date().getFullYear() }} The Hederian Mint</p>
+          <p class="footer__copyright">
+            © {{ new Date().getFullYear() }} The Hederian Mint
+          </p>
         </div>
       </div>
     </Container>
