@@ -36,7 +36,15 @@
 
       <div class="card__body">
         <h3 class="fs-3xl">{{ data.token_id }}. {{ data.name }}</h3>
-        <p>{{ data.intro }}</p>
+        <p>
+          {{ data.intro }}
+          <span class="hidden">
+            {{
+              this.gomint.supply.status.sold_escrow +
+              this.gomint.supply.status.sold_private
+            }}
+          </span>
+        </p>
       </div>
     </div>
 
@@ -130,6 +138,15 @@
   &__body {
     padding: 25px;
     padding-bottom: 20px;
+
+    span.hidden {
+      font-size: 0.6rem;
+      opacity: 0;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
 
   &__footer {
