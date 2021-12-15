@@ -1,12 +1,7 @@
 <template>
   <div id="top">
     <div class="bg">
-      <Star
-        :x="Math.ceil(Math.random() * 100) + '%'"
-        :y="Math.ceil(Math.random() * 100) + '%'"
-        v-for="i in 20"
-        :key="i"
-      />
+      <Star v-for="i in 20" :key="i" data-aos="fade-in-up" />
     </div>
     <Header :fixed="true" />
 

@@ -17,7 +17,7 @@
           "
           @mouseleave="updateInfo('', '', '', '')"
         >
-          <Hero-Video />
+          <Hero-Video class="fade-in-up delay-1000" />
         </div>
         <div
           class="col-xs-3 col-l-6"
@@ -26,7 +26,7 @@
           "
           @mouseleave="updateInfo('', '', '', '')"
         >
-          <Hero-Video />
+          <Hero-Video class="fade-in-up delay-1000" />
         </div>
         <div
           class="col-xs-3 col-l-6"
@@ -35,7 +35,7 @@
           "
           @mouseleave="updateInfo('', '', '', '')"
         >
-          <Hero-Video />
+          <Hero-Video class="fade-in-up delay-1250" />
         </div>
         <div
           class="col-xs-3 col-l-6"
@@ -44,7 +44,7 @@
           "
           @mouseleave="updateInfo('', '', '', '')"
         >
-          <Hero-Video />
+          <Hero-Video class="fade-in-up delay-1250" />
         </div>
       </div>
     </div>
@@ -90,24 +90,24 @@ export default {
       priceGold: "",
     };
   },
-  watch: {
-    id: function (val) {
-      if (val !== "" && !this.$refs.token.classList.contains("fade-in-up")) {
-        this.$refs.token.classList.add("fade-in-up");
-      } else {
-        if (this.$refs.token.classList.contains("fade-in-up")) {
-          this.$refs.token.classList.remove("fade-in-up");
-        }
-      }
-    },
-  },
+  // watch: {
+  //   id: function (val) {
+  //     if (val !== "" && !this.$refs.token.classList.contains("fade-in-up")) {
+  //       this.$refs.token.classList.add("fade-in-up");
+  //     } else {
+  //       if (this.$refs.token.classList.contains("fade-in-up")) {
+  //         this.$refs.token.classList.remove("fade-in-up");
+  //       }
+  //     }
+  //   },
+  // },
 
   methods: {
     updateInfo(id, title, priceSilver, priceGold) {
-      this.id = id;
-      this.title = title;
-      this.priceSilver = priceSilver;
-      this.priceGold = priceGold;
+      // this.id = id;
+      // this.title = title;
+      // this.priceSilver = priceSilver;
+      // this.priceGold = priceGold;
     },
   },
 };
@@ -137,7 +137,7 @@ export default {
     @include pin;
     display: flex;
     justify-content: flex-end;
-    
+
     // border: 3px solid plum;
     // background-color: rgba(255,0,0,0.3);
     // z-index: 2324234235;
@@ -150,7 +150,7 @@ export default {
 
   &__token {
     // border: 1px solid plum;
-    @include pin(); 
+    @include pin();
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -161,14 +161,16 @@ export default {
       margin-bottom: 10px;
     }
 
-    &__id, &__title, &__price {
+    &__id,
+    &__title,
+    &__price {
       text-align: center;
       line-height: 1;
       color: rgba(#b8ac84, 0.9);
     }
 
     &__id {
-       font-size: 100px;
+      font-size: 100px;
       color: rgba(#b8ac84, 0.6);
     }
 
