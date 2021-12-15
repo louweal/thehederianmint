@@ -2,9 +2,15 @@
   <div class="hero">
     <div class="hero__bg">
       <div class="hero__bgvideo">
-        <!-- <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
+        <video
+          playsinline
+          muted
+          loop
+          autoplay
+          src="../videos/elephant-silver.mp4"
+        >
           <div class="video-error">Unable to play video on this device</div>
-        </video> -->
+        </video>
         <!-- <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
           <source
             src="../videos/elephant-gold-hero.hevc.mp4"
@@ -66,16 +72,16 @@ export default {
 
   &__bg {
     @include pin;
-    right: 8%;
+    right: 0%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     // border: 3px solid plum;
-    z-index: 2324234235;
+    // z-index: 2324234235;
   }
 
   &__bgvideo {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     // height: 100vh;
@@ -99,6 +105,7 @@ export default {
     }
 
     @include from(l) {
+      display: flex;
       max-width: 1137px;
       max-height: 720px;
       filter: brightness(0.8);
