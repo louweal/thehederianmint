@@ -5,13 +5,13 @@
         <!-- <video playsinline muted loop autoplay src="../videos/thm-v1.mp4">
           <div class="video-error">Unable to play video on this device</div>
         </video> -->
-        <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
-          <!-- <source
+        <!-- <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
+          <source
             src="../videos/elephant-gold-hero.hevc.mp4"
             type='video/mp4; codecs="hvc1"'
-          /> -->
+          />
           <source src="../videos/elephant.webm" type="video/webm" />
-        </video>
+        </video> -->
       </div>
     </div>
     <Container>
