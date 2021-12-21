@@ -1,4 +1,3 @@
-@import "config";
 
 @mixin breakpoint($breakpoint, $logic: false) {
   @if ($logic) {

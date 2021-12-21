@@ -34,10 +34,7 @@ export default {
    */
   styleResources: {
     scss: [
-      "@/assets/css/base/_config.scss",
-      "@/assets/css/vendors/_include-media.scss",
-      "@/assets/css/utils/_all.scss",
-      "@/assets/css/base/_all.scss",
+      "@/assets/css/settings/_all.scss",
     ],
   },
 

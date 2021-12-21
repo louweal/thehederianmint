@@ -1,42 +1,4 @@
 
-$breakpoints: (
-  'xs':  320px, // mobile
-  's': 480px, // phablet
-  'm':  768px, // tablet
-  'l': 977px, // desktop
-  'xl':  1200px, // widescreen
-  'xxl':  1680px, // fullhd
-
-) !default;
-
-$display-modes: inline flex block;
-
-
-
-@mixin from($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        @media (min-width:#{inspect(map-get($breakpoints, $breakpoint))}) {
-             @content;
-        }
-    }
-    @else {
-         @warn"Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
-}
-
-@mixin until($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        $maxbreakpoint: inspect(map-get($breakpoints, $breakpoint) - 1);
-        @media (max-width:#{$maxbreakpoint}) {
-             @content;
-        }
-    }
-    @else {
-         @warn"Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
-    }
-}
-
-
 $breakpoints-count: length($breakpoints);
 @for $i from 1 through $breakpoints-count {
   $bp: nth(map-keys($breakpoints), $i);
