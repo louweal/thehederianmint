@@ -1,7 +1,6 @@
 <template>
   <a
     class="shop-image img ratio-16x9"
-    :href="item.url"
     target="_blank"
     rel="noreferrer nofollow"
   >
@@ -20,9 +19,7 @@
   </a>
 </template>
 
-
 <script>
-// import tokens from "./../data/tokens.json";
 import "../assets/css/components/_img.scss";
 
 export default {
@@ -35,15 +32,14 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
-
 .shop-image {
   position: relative;
   display: block;
   cursor: pointer;
 
-  &__default, &__hovered {
+  &__default,
+  &__hovered {
     transition: opacity 0.35s 0.05s linear;
   }
 
@@ -63,8 +59,5 @@ export default {
     opacity: 0;
     z-index: 100;
   }
-
 }
-
-
 </style>

@@ -8,12 +8,12 @@
             backgroundImage: `url(` + require(`~/images/${data.image}`) + `)`,
           }"
         >
-          <div class="card__play">
+          <!-- <div class="card__play">
             <div>
               <span class="hide--xs display--l">Hover</span>
               <span class="hide--l">Click</span> to view in 3D
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="card__video">

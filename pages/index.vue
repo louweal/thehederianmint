@@ -64,12 +64,13 @@
             <h2 class="fs-4xl f-no-margin" data-aos="splitting">Etsy Store</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
-            <Button
+            OPENS SOON
+            <!-- <Button
               title="Coming soon!"
               url="#"
               modifier="secondary"
               class="button--ghost"
-            />
+            /> -->
           </div>
         </div>
 
@@ -108,7 +109,7 @@ export default {
     },
     {
       image: require(`~/images/elephant-3d.png`),
-      hoverImage: require(`~/images/hbar-3d-hover.png`),
+      hoverImage: require(`~/images/elephant-3d.png`),
       url: "#",
     },
   ],

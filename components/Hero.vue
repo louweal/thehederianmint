@@ -26,7 +26,11 @@
           />
         </div>
         <div class="col-xs-4 col-l-6">
-          <Hero-Video class="fade-in-up delay-1250" id="#004" />
+          <Hero-Video
+            class="fade-in-up delay-1250"
+            id="#004"
+            :url="require(`~/videos/dutchman-gold_VP9.webm`)"
+          />
         </div>
       </div>
     </div>
