@@ -89,6 +89,7 @@
   &__header {
     position: relative;
     overflow: hidden;
+    // content: "test";
   }
 
   &__play {
@@ -121,7 +122,7 @@
 
   &__video {
     position: absolute;
-    background: #000;
+    background: transparent;
     width: 100%;
     height: 100%;
     opacity: 0;

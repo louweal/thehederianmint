@@ -72,9 +72,17 @@ img {
   max-width: 100%;
 }
 
-ul.inline li {
-  display: inline;
+ul.inline {
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 12px;
+  }
 }
+
+// ul.inline li {
+//   display: inline;
+// }
 
 .screen-reader-text {
   display: none;

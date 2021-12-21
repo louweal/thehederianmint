@@ -1,26 +1,54 @@
 <template>
   <div class="hero">
     <div class="hero__bg">
-      <div class="hero__bgvideo">
-        <video
-          playsinline
-          muted
-          loop
-          autoplay
-          src="../videos/elephant-silver.mp4"
+      <!-- <div class="hero__token" ref="token">
+        <span class="hero__token__id">{{ id }}</span>
+        <span>{{ title }}</span>
+        <span>{{ priceSilver !== "" ? "SILVER" : "" }}</span>
+        <span class="hero__token__price">{{ priceSilver }}</span>
+        <span>{{ priceSilver !== "" ? "GOLD" : "" }}</span>
+        <span class="hero__token__price">{{ priceGold }}</span>
+      </div> -->
+      <div class="grid collapse no-bottom-margin-cols">
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#001', 'The Hederian Elephant', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
         >
-          <div class="video-error">Unable to play video on this device</div>
-        </video>
-        <!-- <video xxwidth="600" xxxheight="100%" autoplay loop muted playsinline>
-          <source
-            src="../videos/elephant-gold-hero.hevc.mp4"
-            type='video/mp4; codecs="hvc1"'
-          />
-          <source src="../videos/elephant.webm" type="video/webm" />
-        </video> -->
+          <Hero-Video class="fade-in-up delay-1000" />
+        </div>
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#002', 'The Hederian Whale', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
+          <Hero-Video class="fade-in-up delay-1000" />
+        </div>
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#003', 'The Hederian Kangaroo', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
+          <Hero-Video class="fade-in-up delay-1250" />
+        </div>
+        <div
+          class="col-xs-3 col-l-6"
+          @mouseover="
+            updateInfo('#004', 'The Hederian Dutchman', '128 HBAR', '1024 HBAR')
+          "
+          @mouseleave="updateInfo('', '', '', '')"
+        >
+          <Hero-Video class="fade-in-up delay-1250" />
+        </div>
       </div>
     </div>
-    <Container>
+    <Container class="hero__inner">
       <div class="grid no-bottom-margin-cols">
         <div class="col-xs-12 col-l-6 offset-l-1">
           <h1 class="fs-6xl" data-anim="splitting">
@@ -53,6 +81,35 @@
 <script>
 export default {
   name: "Hero",
+
+  data: function () {
+    return {
+      id: "",
+      title: "",
+      priceSilver: "",
+      priceGold: "",
+    };
+  },
+  // watch: {
+  //   id: function (val) {
+  //     if (val !== "" && !this.$refs.token.classList.contains("fade-in-up")) {
+  //       this.$refs.token.classList.add("fade-in-up");
+  //     } else {
+  //       if (this.$refs.token.classList.contains("fade-in-up")) {
+  //         this.$refs.token.classList.remove("fade-in-up");
+  //       }
+  //     }
+  //   },
+  // },
+
+  methods: {
+    updateInfo(id, title, priceSilver, priceGold) {
+      // this.id = id;
+      // this.title = title;
+      // this.priceSilver = priceSilver;
+      // this.priceGold = priceGold;
+    },
+  },
 };
 </script>
 
@@ -70,46 +127,56 @@ export default {
     height: calc(100vh - 108px);
   }
 
+  &__inner {
+    button {
+      z-index: 2424235235;
+    }
+  }
+
   &__bg {
     @include pin;
-    right: 0%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+
     // border: 3px solid plum;
+    // background-color: rgba(255,0,0,0.3);
     // z-index: 2324234235;
-  }
-
-  &__bgvideo {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    // height: 100vh;
-    // max-height: 100vh;
-    right: 53%;
-    overflow: hidden;
-    // background-color: red;
-    // filter: brightness(0.6);
-    // border: 1px solid red;
-
-    video {
-      height: 170vh;
-      // transform: scale(200%);
-      // background-color: yellow;
-      width: 100vw;
-
-      @include from(l) {
-        // height: auto;
-        width: 65vw;
-      }
-    }
 
     @include from(l) {
-      display: flex;
-      max-width: 1137px;
-      max-height: 720px;
-      filter: brightness(0.8);
+      align-items: center;
+      left: 40%;
     }
   }
+
+  // &__token {
+  //   // border: 1px solid plum;
+  //   @include pin();
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   z-index: -1;
+
+  //   span {
+  //     margin-bottom: 10px;
+  //   }
+
+  //   &__id,
+  //   &__title,
+  //   &__price {
+  //     text-align: center;
+  //     line-height: 1;
+  //     color: rgba(#b8ac84, 0.9);
+  //   }
+
+  //   &__id {
+  //     font-size: 100px;
+  //     color: rgba(#b8ac84, 0.6);
+  //   }
+
+  //   &__title {
+  //     font-size: 120px;
+  //   }
+  // }
 }
 </style>

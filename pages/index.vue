@@ -6,7 +6,36 @@
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-7">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Newest</h2>
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Popular</h2>
+          </div>
+          <div class="col-xs-5 align-xs-end">
+            <Button title="All NFTs" url="/nft" modifier="secondary" />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div
+            v-for="(item, index) in popularTokens"
+            :key="item.ID"
+            :class="`delay-l-${(index % 3) * 200}`"
+            class="col-xs-12 col-l-4"
+            data-aos="fade-in-up"
+          >
+            <Card :data="item" />
+          </div>
+        </div>
+      </Container>
+
+      <div id="contact"></div>
+    </Section>
+
+    <AboutSection />
+
+    <Section>
+      <Container>
+        <div class="grid align-xs-middle">
+          <div class="col-xs-7">
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">New</h2>
             <!-- <p class="f-no-margin"><i>The First Set</i></p> -->
           </div>
           <div class="col-xs-5 align-xs-end">
@@ -26,37 +55,6 @@
           </div>
         </div>
       </Container>
-    </Section>
-
-    <AboutSection />
-
-    <Section>
-      <Container>
-        <div class="grid align-xs-middle">
-          <div class="col-xs-7">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">
-              Most popular
-            </h2>
-          </div>
-          <div class="col-xs-5 align-xs-end">
-            <Button title="All NFTs" url="/nft" modifier="secondary" />
-          </div>
-        </div>
-
-        <div class="grid">
-          <div
-            v-for="(item, index) in popularTokens"
-            :key="item.ID"
-            :class="`delay-l-${(index % 3) * 200}`"
-            class="col-xs-12 col-l-4"
-            data-aos="fade-in-up"
-          >
-            <Card :data="item" />
-          </div>
-        </div>
-      </Container>
-      
-
       <div id="contact"></div>
     </Section>
   </main>
@@ -77,7 +75,9 @@ export default {
     popularTokens() {
       return this.$options.tokens
         .filter((x) => x.popular !== false)
-        .sort((a, b) => ((a.stock.max - a.stock.current) < (b.stock.max - b.stock.current) ? 1 : -1));
+        .sort((a, b) =>
+          a.stock.current / a.stock.max < b.stock.current / b.stock.max ? 1 : -1
+        );
     },
     newTokens() {
       return this.$options.tokens
