@@ -2,7 +2,7 @@
   <Section>
     <Container>
       <div class="grid align-xs-middle">
-        <div class="offset-l-1"></div>
+        <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-12 col-l-4">
           <h2 class="fs-4xl" data-anim="splitting">About</h2>
 
@@ -20,7 +20,7 @@
             products. Stay tuned for more information!
           </p>
         </div>
-        <div class="offset-l-1"></div>
+        <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-12 col-l-5">
           <div
             data-aos="fade-in-up"

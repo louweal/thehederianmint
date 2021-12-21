@@ -31,7 +31,7 @@
             </p>
           </form>
         </div>
-        <div class="offset-l-1"></div>
+        <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-6 col-l-2">
           <h4 class="fs-3xl">Shop</h4>
 
@@ -42,7 +42,7 @@
           />
           <icon-link title="Etsy" icon="etsy" url="https://www.etsy.com" />
         </div>
-        <div class="offset-l-1"></div>
+        <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-6 col-l-2">
           <h4 class="fs-3xl">Follow</h4>
           <icon-link

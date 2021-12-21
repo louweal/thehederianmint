@@ -61,7 +61,12 @@
             grid-column: span #{$i};
           }
         }
-        @for $i from 0 through $cols {
+
+        .offset-#{$name}-0 {
+          display: none;
+        }
+
+        @for $i from 1 through $cols {
           .offset-#{$name}-#{$i} {
             grid-column: span #{$i};
           }
