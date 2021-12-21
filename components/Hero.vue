@@ -1,14 +1,14 @@
 <template>
   <div class="hero">
     <div class="hero__bg">
-      <div class="hero__token" ref="token">
+      <!-- <div class="hero__token" ref="token">
         <span class="hero__token__id">{{ id }}</span>
         <span>{{ title }}</span>
         <span>{{ priceSilver !== "" ? "SILVER" : "" }}</span>
         <span class="hero__token__price">{{ priceSilver }}</span>
         <span>{{ priceSilver !== "" ? "GOLD" : "" }}</span>
         <span class="hero__token__price">{{ priceGold }}</span>
-      </div>
+      </div> -->
       <div class="grid collapse no-bottom-margin-cols">
         <div
           class="col-xs-3 col-l-6"
@@ -148,35 +148,35 @@ export default {
     }
   }
 
-  &__token {
-    // border: 1px solid plum;
-    @include pin();
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
+  // &__token {
+  //   // border: 1px solid plum;
+  //   @include pin();
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   z-index: -1;
 
-    span {
-      margin-bottom: 10px;
-    }
+  //   span {
+  //     margin-bottom: 10px;
+  //   }
 
-    &__id,
-    &__title,
-    &__price {
-      text-align: center;
-      line-height: 1;
-      color: rgba(#b8ac84, 0.9);
-    }
+  //   &__id,
+  //   &__title,
+  //   &__price {
+  //     text-align: center;
+  //     line-height: 1;
+  //     color: rgba(#b8ac84, 0.9);
+  //   }
 
-    &__id {
-      font-size: 100px;
-      color: rgba(#b8ac84, 0.6);
-    }
+  //   &__id {
+  //     font-size: 100px;
+  //     color: rgba(#b8ac84, 0.6);
+  //   }
 
-    &__title {
-      font-size: 120px;
-    }
-  }
+  //   &__title {
+  //     font-size: 120px;
+  //   }
+  // }
 }
 </style>
