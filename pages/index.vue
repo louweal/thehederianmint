@@ -4,11 +4,11 @@
 
     <Section>
       <Container>
-        <div class="grid align-xs-middle">
-          <div class="col-xs-7">
+        <div class="grid collapse align-xs-middle">
+          <div class="col-xs-6">
             <h2 class="fs-4xl f-no-margin" data-aos="splitting">Popular</h2>
           </div>
-          <div class="col-xs-5 align-xs-end">
+          <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
           </div>
         </div>
@@ -33,12 +33,12 @@
 
     <Section>
       <Container>
-        <div class="grid align-xs-middle">
-          <div class="col-xs-7">
+        <div class="grid collapse align-xs-middle">
+          <div class="col-xs-6">
             <h2 class="fs-4xl f-no-margin" data-aos="splitting">New</h2>
             <!-- <p class="f-no-margin"><i>The First Set</i></p> -->
           </div>
-          <div class="col-xs-5 align-xs-end">
+          <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
           </div>
         </div>
@@ -74,10 +74,10 @@ export default {
   computed: {
     popularTokens() {
       return this.$options.tokens
-        .filter((x) => x.popular !== false)
         .sort((a, b) =>
-          a.stock.current / a.stock.max < b.stock.current / b.stock.max ? 1 : -1
-        );
+          a.stock.current / a.stock.max < b.stock.current / b.stock.max ? -1 : 1
+        )
+        .slice(0, 3);
     },
     newTokens() {
       return this.$options.tokens

@@ -1,7 +1,7 @@
 <template>
   <div id="top">
     <div class="bg">
-      <Star v-for="i in 20" :key="i" data-aos="fade-in-up" />
+      <Star v-for="i in 20" :key="i" xxxdata-aos="fade-in-up" />
     </div>
     <Header :fixed="true" />
 
