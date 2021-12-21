@@ -32,13 +32,15 @@
     </div>
     <Container class="hero__inner">
       <div class="grid no-bottom-margin-cols">
-        <div class="col-xs-12 col-l-6 offset-l-1">
+        <div class="offset-xs-0 offset-l-1"></div>
+        <div class="col-xs-12 col-l-6">
           <h1 class="fs-6xl" data-anim="splitting">
             Take your hbarbarianism to the next level
           </h1>
         </div>
         <div class="col-xs-12"><!-- empty --></div>
-        <div class="col-xs-12 col-l-5 offset-l-1">
+        <div class="offset-xs-0 offset-l-1"></div>
+        <div class="col-xs-12 col-l-5">
           <p class="fade-in-up delay-1000">
             Discover the very first set of exclusive high-quality HBAR coins
             ever minted on the Hedera network. Collectable bullion coins for

@@ -10,7 +10,6 @@
         >
           <div class="card__play">
             <div>
-              <i class="icon-360" />
               <span class="hide--xs display--l">Hover</span>
               <span class="hide--l">Click</span> to view in 3D
             </div>

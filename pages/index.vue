@@ -55,6 +55,35 @@
           </div>
         </div>
       </Container>
+    </Section>
+
+    <Section>
+      <Container>
+        <div class="grid align-xs-middle collapse">
+          <div class="col-xs-6">
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Etsy Store</h2>
+          </div>
+          <div class="col-xs-6 align-xs-end">
+            <Button
+              title="Coming soon!"
+              url="#"
+              modifier="secondary"
+              class="button--ghost"
+            />
+          </div>
+        </div>
+
+        <div class="grid collapse no-bottom-margin-cols" data-aos="fade-in-up">
+          <div
+            v-for="(item, index) in $options.shopItems"
+            :key="index"
+            class="col-xs-12 col-l-6"
+          >
+            <shop-image :item="item" />
+          </div>
+        </div>
+      </Container>
+
       <div id="contact"></div>
     </Section>
   </main>
@@ -62,7 +91,7 @@
 
 <script>
 import tokens from "./../data/tokens.json";
-import "../assets/css/components/_img.scss";
+// import "../assets/css/components/_img.scss";
 
 export default {
   name: "Main",
@@ -70,6 +99,19 @@ export default {
   transition: "home",
 
   tokens: tokens,
+
+  shopItems: [
+    {
+      image: require(`~/images/hbar-3d.png`),
+      hoverImage: require(`~/images/hbar-3d-hover.png`),
+      url: "#",
+    },
+    {
+      image: require(`~/images/elephant-3d.png`),
+      hoverImage: require(`~/images/hbar-3d-hover.png`),
+      url: "#",
+    },
+  ],
 
   computed: {
     popularTokens() {
