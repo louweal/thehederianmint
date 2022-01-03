@@ -19,16 +19,15 @@
 
     <Section>
       <Container>
-
         <div class="grid collapse align-l-middle no-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
-              <h2 class="fs-4xl" data-anim="splitting">Alpha Series</h2>
+            <h2 class="fs-4xl" data-anim="splitting">Alpha Series</h2>
           </div>
           <div class="col-xs-12 col-l-5 align-xs-center align-l-end">
-            Release date: Dec 7nd 2021 
-          </div>  
+            Release date: Dec 7nd 2021
+          </div>
         </div>
-        <br><br>
+        <br /><br />
         <div class="grid">
           <div
             v-for="(item, index) in $options.tokens"
@@ -43,30 +42,27 @@
             <ActionCard />
           </div>
         </div>
-
-
-
       </Container>
-          
     </Section>
-    
-        <Section>
+
+    <!-- <Section>
       <Container>
         <div class="grid collapse align-l-middle xxxno-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
-              <h2 class="fs-4xl" data-aos="splitting">Beta Series</h2>
+            <h2 class="fs-4xl" data-aos="splitting">Beta Series</h2>
           </div>
-          <div class="col-xs-12 col-l-5 align-xs-center align-l-end" data-aos="fade-in-up">
+          <div
+            class="col-xs-12 col-l-5 align-xs-center align-l-end"
+            data-aos="fade-in-up"
+          >
             Release date: Nov 7th
           </div>
-          <div class="col-xs-12" data-aos="fade-in-up">
-            Coming soon!
-          </div>  
+          <div class="col-xs-12" data-aos="fade-in-up">Coming soon!</div>
         </div>
-        <br><br>
+        <br /><br />
       </Container>
       <div id="contact"></div>
-        </Section>
+    </Section> -->
   </main>
 </template>
 
@@ -78,10 +74,8 @@ export default {
 
   transition: "home",
 
-  tokens: tokens,
+  tokens: tokens.sort((a, b) => (a.ID > b.ID ? 1 : -1)),
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

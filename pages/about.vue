@@ -7,19 +7,20 @@
             <!-- <h2 class="fs-2xl f-base fade-in-up xxxdelay-1250">
               The Hederian Mint
             </h2> -->
-            <h1 class="fs-5xl" data-anim='splitting'>
-              Collectable bullion coins for Hederians and Hbarbarians
+            <h1 class="fs-5xl" data-anim="splitting">
+              Collectable NFT coins for hederians and hbarbarians
             </h1>
           </div>
         </div>
 
         <hr class="fade-in-up delay-500" />
       </Container>
+      <div id="contact"></div>
     </Section>
 
     <AboutSection />
 
-        <Section>
+    <!-- <Section>
       <Container>
         <div class="grid align-xs-middle">
           <div class="col-xs-12 col-l-4">
@@ -34,17 +35,15 @@
 
         </div>
       </Container>
-  <div id="contact"></div>
-    </Section>
+
+    </Section> -->
   </main>
 </template>
 
 <script>
-
 export default {
   name: "About",
 
   transition: "home",
-
 };
 </script>

@@ -11,6 +11,7 @@
       }"
     />
     <div
+      v-if="item.hoverImage"
       class="shop-image__hovered img ratio-16x9"
       :style="{
         backgroundImage: `url(` + item.hoverImage + `)`,
@@ -44,8 +45,7 @@ export default {
   }
 
   &:hover {
-    .shop-image__default {
-      // display: none;
+    div:nth(1):not(:last-of-type) {
       opacity: 0;
     }
     .shop-image__hovered {

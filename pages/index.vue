@@ -25,8 +25,6 @@
           </div>
         </div>
       </Container>
-
-      <div id="contact"></div>
     </Section>
 
     <AboutSection />
@@ -35,8 +33,7 @@
       <Container>
         <div class="grid collapse align-xs-middle">
           <div class="col-xs-6">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">New</h2>
-            <!-- <p class="f-no-margin"><i>The First Set</i></p> -->
+            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Highlighted</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
@@ -92,7 +89,6 @@
 
 <script>
 import tokens from "./../data/tokens.json";
-// import "../assets/css/components/_img.scss";
 
 export default {
   name: "Main",
@@ -109,7 +105,6 @@ export default {
     },
     {
       image: require(`~/images/elephant-3d.png`),
-      hoverImage: require(`~/images/elephant-3d.png`),
       url: "#",
     },
   ],
