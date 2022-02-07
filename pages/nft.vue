@@ -30,7 +30,7 @@
         <br /><br />
         <div class="grid">
           <div
-            v-for="(item, index) in $options.tokens"
+            v-for="(item, index) in alphaSet"
             :key="item.ID"
             :class="`delay-l-${(index % 3) * 200}`"
             class="col-xs-12 col-l-4"
@@ -45,7 +45,7 @@
       </Container>
     </Section>
 
-    <!-- <Section>
+    <Section>
       <Container>
         <div class="grid collapse align-l-middle xxxno-bottom-margin-cols">
           <div class="col-xs-12 col-l-7 align-xs-center align-l-start">
@@ -55,14 +55,28 @@
             class="col-xs-12 col-l-5 align-xs-center align-l-end"
             data-aos="fade-in-up"
           >
-            Release date: Nov 7th
+            Release date: Feb 7th
           </div>
-          <div class="col-xs-12" data-aos="fade-in-up">Coming soon!</div>
         </div>
         <br /><br />
+        <div class="grid">
+          <div
+            v-for="(item, index) in betaSet"
+            :key="item.ID"
+            :class="`delay-l-${(index % 3) * 200}`"
+            class="col-xs-12 col-l-4"
+            data-aos="fade-in-up"
+          >
+            <Card :data="item" />
+          </div>
+          <div class="col-xs-12 col-l-4 delay-l-400" data-aos="fade-in-up">
+            <ActionCard />
+          </div>
+        </div>
+        <!-- </div> -->
       </Container>
       <div id="contact"></div>
-    </Section> -->
+    </Section>
   </main>
 </template>
 
@@ -75,6 +89,16 @@ export default {
   transition: "home",
 
   tokens: tokens.sort((a, b) => (a.ID > b.ID ? 1 : -1)),
+
+  computed: {
+    alphaSet() {
+      return this.$options.tokens.filter((t) => t.set === "alpha");
+    },
+
+    betaSet() {
+      return this.$options.tokens.filter((t) => t.set === "beta");
+    },
+  },
 };
 </script>
 

@@ -95,7 +95,7 @@ export default {
 
   transition: "home",
 
-  tokens: tokens,
+  tokens: tokens.sort((a, b) => (a.ID > b.ID ? 1 : -1)),
 
   shopItems: [
     {
@@ -111,16 +111,16 @@ export default {
 
   computed: {
     popularTokens() {
-      return this.$options.tokens
+      return [...this.$options.tokens]
         .sort((a, b) =>
           a.stock.current / a.stock.max < b.stock.current / b.stock.max ? -1 : 1
         )
         .slice(0, 3);
     },
     newTokens() {
-      return this.$options.tokens
-        .filter((x) => x.new !== false)
-        .sort((a, b) => (a.new > b.new ? 1 : -1));
+      return [...this.$options.tokens.filter((x) => x.new !== false)].sort(
+        (a, b) => (a.new > b.new ? 1 : -1)
+      );
     },
   },
 };

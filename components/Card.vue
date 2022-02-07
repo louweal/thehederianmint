@@ -7,17 +7,11 @@
           :style="{
             backgroundImage: `url(` + require(`~/images/${data.image}`) + `)`,
           }"
-        >
-          <!-- <div class="card__play">
-            <div>
-              <span class="hide--xs display--l">Hover</span>
-              <span class="hide--l">Click</span> to view in 3D
-            </div>
-          </div> -->
-        </div>
+        ></div>
 
         <div class="card__video">
           <video
+            v-if="data.video"
             playsinline
             muted
             loop
@@ -60,7 +54,7 @@
           :url="`https://gomint.me/gallery/?network=mainnet&tokenId=${data.gomint_id}`"
         />
       </div>
-      <div v-else>SOLD OUT</div>
+      <div v-else>NOT AVAILABLE</div>
     </div>
   </div>
 </template>
@@ -210,14 +204,14 @@ export default {
     this.gomint = gomint;
 
     // console.log(this.data.name);
-    let earnings =
-      this.data.price *
-      0.9 *
-      (this.gomint.supply.status.sold_escrow +
-        this.gomint.supply.status.sold_private);
-    if (earnings > 0) {
-      console.log(this.data.gomint_id + ": " + earnings);
-    }
+    // let earnings =
+    //   this.data.price *
+    //   0.9 *
+    //   (this.gomint.supply.status.sold_escrow +
+    //     this.gomint.supply.status.sold_private);
+    // if (earnings > 0) {
+    //   console.log(this.data.gomint_id + ": " + earnings);
+    // }
   },
 };
 </script>
