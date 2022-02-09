@@ -15,6 +15,7 @@
 
         <hr class="fade-in-up delay-500" />
       </Container>
+      <div id="alpha"></div>
     </Section>
 
     <Section>
@@ -43,6 +44,7 @@
           </div>
         </div>
       </Container>
+      <div id="beta"></div>
     </Section>
 
     <Section>
