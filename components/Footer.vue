@@ -1,9 +1,9 @@
 <template>
-  <footer class="footer" data-aos="fade-in-up">
+  <footer class="footer fade-in-up" data-aos="90">
     <Container>
       <div class="grid">
         <div class="col-xs-12 col-l-3">
-          <h4 class="fs-3xl">Contact</h4>
+          <h3 class="fs-3xl">Contact</h3>
 
           <p>
             Submit your questions and suggestions using the contact form, or
@@ -60,7 +60,7 @@
         </div>
         <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-6 col-l-2">
-          <h4 class="fs-3xl">Shop</h4>
+          <h3 class="fs-3xl">Shop</h3>
 
           <icon-link
             title="GoMint"
@@ -71,7 +71,7 @@
         </div>
         <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-6 col-l-2">
-          <h4 class="fs-3xl">Follow</h4>
+          <h3 class="fs-3xl">Follow</h3>
           <icon-link
             title="Instagram"
             icon="instagram"

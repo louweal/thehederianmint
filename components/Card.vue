@@ -31,19 +31,19 @@
         <h3 class="fs-3xl">{{ data.token_id }}. {{ data.name }}</h3>
         <p>
           {{ data.intro }}
-          <span class="hidden">
+          <!-- <span class="hidden">
             {{
               this.gomint.supply.status.sold_escrow +
               this.gomint.supply.status.sold_private
             }}
-          </span>
+          </span> -->
         </p>
       </div>
     </div>
 
     <div class="card__footer">
       <StockIndicator
-        :current="gomint.supply.status.on_sale"
+        :current="currentStock !== -1 ? currentStock : data.stock.max"
         :max="data.stock.max"
       />
 
@@ -58,6 +58,54 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "Card",
+
+  props: {
+    data: {
+      type: Object,
+      default: {},
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      currentStock: -1,
+    };
+  },
+
+  async created() {
+    // check store
+    let stockFromStore = this.$store.state.stock[this.data.gomint_id];
+
+    if (stockFromStore) {
+      this.currentStock = stockFromStore;
+    } else {
+      // fetch data from gomint
+      let response = await fetch(
+        `https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`
+      );
+      let gomint = await response.json();
+      this.currentStock = gomint.supply.status.on_sale;
+
+      // commit to store
+      this.$store.commit("stock/setStock", {
+        id: this.data.gomint_id,
+        onSale: this.currentStock,
+      });
+    }
+  },
+
+  computed: {
+    inStock() {
+      return this.currentStock > 0;
+    },
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 .card {
@@ -161,57 +209,3 @@
   }
 }
 </style>
-
-<script>
-export default {
-  name: "Card",
-
-  props: {
-    data: {
-      type: Object,
-      default: {},
-      required: true,
-    },
-  },
-
-  data() {
-    return {
-      gomint: {
-        supply: {
-          status: {
-            on_sale: this.data.stock.max,
-            unreleased: 0,
-            in_basket: 0,
-            sold_escrow: 0,
-            sold_private: 0,
-          },
-        },
-      },
-    };
-  },
-
-  computed: {
-    inStock() {
-      return this.gomint.supply.status.on_sale > 0;
-    },
-  },
-
-  async mounted() {
-    let response = await fetch(
-      `https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`
-    );
-    let gomint = await response.json();
-    this.gomint = gomint;
-
-    // console.log(this.data.name);
-    // let earnings =
-    //   this.data.price *
-    //   0.9 *
-    //   (this.gomint.supply.status.sold_escrow +
-    //     this.gomint.supply.status.sold_private);
-    // if (earnings > 0) {
-    //   console.log(this.data.gomint_id + ": " + earnings);
-    // }
-  },
-};
-</script>

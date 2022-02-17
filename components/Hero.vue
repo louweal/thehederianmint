@@ -3,31 +3,31 @@
     <div class="hero__bg">
       <div class="grid collapse no-bottom-margin-cols">
         <div class="col-xs-4 col-l-6">
-          <Hero-Video
-            class="fade-in-up delay-1000"
+          <hero-video
+            class="fade-in-up start-animation delay-1000"
             id="#001"
             :url="require(`~/videos/elephant.webm`)"
           />
         </div>
         <div class="col-xs-4 col-l-6">
-          <Hero-Video
-            class="fade-in-up delay-1000"
+          <hero-video
+            class="fade-in-up start-animation delay-1000"
             id="#002"
-            start="1"
+            :start="1"
             :url="require(`~/videos/whale-silver_VP9.webm`)"
           />
         </div>
         <div class="col-xs-4 col-l-6 hide--xs display--l">
-          <Hero-Video
-            class="fade-in-up delay-1250"
+          <hero-video
+            class="fade-in-up start-animation delay-1250"
             id="#003"
-            start="2"
+            :start="2"
             :url="require(`~/videos/kangaroo-silver_VP9.webm`)"
           />
         </div>
         <div class="col-xs-4 col-l-6">
-          <Hero-Video
-            class="fade-in-up delay-1250"
+          <hero-video
+            class="fade-in-up start-animation delay-1250"
             id="#004"
             :url="require(`~/videos/dutchman-gold_VP9.webm`)"
           />
@@ -38,14 +38,14 @@
       <div class="grid no-bottom-margin-cols">
         <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-12 col-l-6">
-          <h1 class="fs-6xl" data-anim="splitting">
+          <h1 class="fs-6xl" data-splitting>
             Take your hbarbarianism to the next level
           </h1>
         </div>
         <div class="col-xs-12"><!-- empty --></div>
         <div class="offset-xs-0 offset-l-1"></div>
         <div class="col-xs-12 col-l-5">
-          <p class="fade-in-up delay-1000">
+          <p class="fade-in-up start-animation delay-1000">
             Discover the very first set of exclusive high-quality HBAR coins
             ever minted on the Hedera network. Collectable bullion coins for
             Hederians and Hbarbarians
@@ -55,7 +55,7 @@
             title="Browse nfts"
             url="/nft"
             modifier="secondary"
-            class="fade-in-up delay-1250"
+            class="fade-in-up start-animation delay-1250"
           />
 
           <br /><br />
@@ -66,6 +66,12 @@
 </template>
 
 <script>
+let Splitting = null;
+
+if (process.client) {
+  Splitting = require("splitting");
+}
+
 export default {
   name: "Hero",
 
@@ -76,6 +82,14 @@ export default {
       priceSilver: "",
       priceGold: "",
     };
+  },
+
+  mounted() {
+    Splitting({
+      target: "[data-splitting]",
+      by: "chars",
+      key: null,
+    });
   },
 };
 </script>

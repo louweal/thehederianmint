@@ -1,7 +1,7 @@
 <template>
   <div id="top">
     <div class="bg">
-      <Star v-for="i in 20" :key="i" xxxdata-aos="fade-in-up" />
+      <Star v-for="i in 20" :key="i" />
     </div>
     <Header :fixed="true" />
 
@@ -9,7 +9,7 @@
     <transition
       v-on:before-enter="beforeEnter"
       v-on:after-enter="afterEnter"
-      v-on:leave="leave"
+      xxxv-on:leave="leave"
     >
       <Nuxt />
     </transition>
@@ -28,86 +28,26 @@ if (process.client) {
 export default {
   name: "Default",
 
-  data: function () {
-    return {
-      animSplitting: [],
-      aosSplitting: [],
-      animFadeInUp: [],
-      aosFadeInUp: [],
-      aosFadeIn: [],
-    };
-  },
-
   methods: {
     beforeEnter: function (el) {
       if (this.$route.hash[0] !== "#") {
         window.scrollTo(0, 0);
       }
     },
-    initAnimations() {
-      let allTargets = document.querySelectorAll(
-        "[data-aos='splitting'], [data-aos='fade-in-up'], [data-anim='splitting'], [data-anim='fade-in-up']"
-      );
-      [].forEach.call(allTargets, (target) => {
-        // hide all targets
-        target.style.opacity = "0";
-      });
 
-      let aosTargets = document.querySelectorAll("[data-aos]");
-      [].forEach.call(aosTargets, (target) => {
-        console.log(target.dataset.aos);
-      });
+    afterEnter: function (el, done) {},
 
-      this.aosSplitting = document.querySelectorAll("[data-aos='splitting']");
-
-      this.aosFadeInUp = document.querySelectorAll("[data-aos='fade-in-up']");
-
-      this.animSplitting = document.querySelectorAll("[data-anim='splitting']");
-      this.animFadeInUp = document.querySelectorAll("[data-anim='fade-in-up']");
-
-      window.addEventListener("scroll", this.aosSplittingFun);
-      window.addEventListener("scroll", this.aosFadeInUpFun);
-
-      this.aosSplittingFun();
-      this.aosFadeInUpFun();
-      this.animSplittingFun();
-      this.animFadeInUpFun();
-    },
-
-    afterEnter: function (el, done) {
-      // console.log("enter");
-      this.initAnimations();
-    },
-    leave: function (el, done) {
-      // console.log("leave");
-      // done();
-    },
-    animSplittingFun() {
-      [].forEach.call(this.animSplitting, (target) => {
-        if (!target.classList.contains("splitting")) {
-          target.style.opacity = "1";
-          this.initSplitting(target);
-        }
-      });
-    },
-    animFadeInUpFun() {
-      [].forEach.call(this.animFadeInUp, (target) => {
-        if (!target.classList.contains("fade-in-up")) {
-          target.classList.add("fade-in-up");
-        }
-      });
-    },
-    aosSplittingFun() {
-      [].forEach.call(this.aosSplitting, (target) => {
+    sos() {
+      let animTargets = document.querySelectorAll("[data-sos]");
+      [].forEach.call(animTargets, (target) => {
+        let startAt = parseInt(target.dataset.sos);
         var rect = target.getBoundingClientRect();
         var elemTop = rect.top;
-        var elemBottom = rect.bottom;
 
-        // Only completely visible elements return true:
-        var isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+        let startTrigger =
+          elemTop < window.innerHeight * (startAt / 100) && elemTop > 0;
 
-        if (isVisible) {
-          // split target if it was not splitted before
+        if (startTrigger) {
           if (!target.classList.contains("splitting")) {
             target.style.opacity = "1";
             this.initSplitting(target);
@@ -116,19 +56,22 @@ export default {
       });
     },
 
-    aosFadeInUpFun() {
-      [].forEach.call(this.aosFadeInUp, (target) => {
-        var rect = target.getBoundingClientRect();
-        var elemTop = rect.top;
-        var elemBottom = rect.bottom;
+    aos() {
+      // console.log("aos");
+      let animTargets = document.querySelectorAll("[data-aos]");
+      [].forEach.call(animTargets, (target) => {
+        let startAt = parseInt(target.dataset.aos);
+        let rect = target.getBoundingClientRect();
+        let elemTop = rect.top;
 
-        // "top 70%"
+        target.style.opacity = "0"; // hide element by default
 
-        var isVisible = elemTop < window.innerHeight * 0.9; // && elemBottom >= 0;
+        let startTrigger =
+          elemTop < window.innerHeight * (startAt / 100) && elemTop > 0;
 
-        if (isVisible) {
-          if (!target.classList.contains("fade-in-up")) {
-            target.classList.add("fade-in-up");
+        if (startTrigger) {
+          if (!target.classList.contains("start-animation")) {
+            target.classList.add("start-animation");
           }
         }
       });
@@ -143,7 +86,12 @@ export default {
   },
 
   mounted() {
-    this.initAnimations();
+    this.aos();
+    window.addEventListener("scroll", this.aos);
+
+    this.sos();
+    window.addEventListener("scroll", this.sos);
+
     let gaScript = document.createElement("script");
     gaScript.setAttribute(
       "src",
@@ -160,14 +108,7 @@ export default {
   },
 
   beforeDestroy() {
-    window.removeEventListener("scroll", this.aosSplittingFun);
-    window.removeEventListener("scroll", this.aosFadeInUpFun);
-
-    [].forEach.call(this.aosFadeInUp, (target) => {
-      if (target.classList.contains("fade-in-up")) {
-        target.classList.remove("fade-in-up");
-      }
-    });
+    window.removeEventListener("scroll", this.sos);
   },
 };
 </script>

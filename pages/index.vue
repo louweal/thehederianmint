@@ -6,7 +6,7 @@
       <Container>
         <div class="grid collapse align-xs-middle">
           <div class="col-xs-6">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Popular</h2>
+            <h2 class="fs-4xl f-no-margin" data-sos="85">Popular</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
@@ -18,8 +18,8 @@
             v-for="(item, index) in popularTokens"
             :key="item.ID"
             :class="`delay-l-${(index % 3) * 200}`"
-            class="col-xs-12 col-l-4"
-            data-aos="fade-in-up"
+            class="col-xs-12 col-l-4 fade-in-up"
+            data-aos="90"
           >
             <Card :data="item" />
           </div>
@@ -33,7 +33,7 @@
       <Container>
         <div class="grid collapse align-xs-middle">
           <div class="col-xs-6">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Highlighted</h2>
+            <h2 class="fs-4xl f-no-margin" data-sos="85">Highlighted</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
@@ -45,8 +45,8 @@
             v-for="(item, index) in newTokens"
             :key="item.ID"
             :class="`delay-${(index % 3) * 200}`"
-            class="col-xs-12 col-l-4"
-            data-aos="fade-in-up"
+            class="col-xs-12 col-l-4 fade-in-up"
+            data-aos="90"
           >
             <Card :data="item" />
           </div>
@@ -58,7 +58,7 @@
       <Container>
         <div class="grid align-xs-middle collapse">
           <div class="col-xs-6">
-            <h2 class="fs-4xl f-no-margin" data-aos="splitting">Etsy Store</h2>
+            <h2 class="fs-4xl f-no-margin" data-sos="85">Etsy Store</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
             OPENS SOON
@@ -71,7 +71,10 @@
           </div>
         </div>
 
-        <div class="grid collapse no-bottom-margin-cols" data-aos="fade-in-up">
+        <div
+          class="grid collapse no-bottom-margin-cols fade-in-up"
+          data-aos="90"
+        >
           <div
             v-for="(item, index) in $options.shopItems"
             :key="index"

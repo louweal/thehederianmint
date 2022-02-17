@@ -1,7 +1,7 @@
 <template>
-  <a
+  <div
     class="shop-image img ratio-16x9"
-    target="_blank"
+    xxxtarget="_blank"
     rel="noreferrer nofollow"
   >
     <div
@@ -17,7 +17,7 @@
         backgroundImage: `url(` + item.hoverImage + `)`,
       }"
     />
-  </a>
+  </div>
 </template>
 
 <script>
@@ -26,8 +26,8 @@ import "../assets/css/components/_img.scss";
 export default {
   props: {
     item: {
-      type: [Array, Boolean],
-      default: () => [],
+      type: [Object, Boolean],
+      default: () => {},
     },
   },
 };

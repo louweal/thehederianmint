@@ -16,15 +16,15 @@
 export default {
   props: {
     id: {
-      type: "String",
+      type: String,
       default: "",
     },
     url: {
-      type: "String",
+      type: String,
       default: "#",
     },
     start: {
-      type: "Number",
+      type: Number,
       default: 0,
     },
   },
