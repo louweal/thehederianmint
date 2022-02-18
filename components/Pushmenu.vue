@@ -2,17 +2,20 @@
   <nav class="pushmenu">
     <ul>
       <li class="delay-0" @click="togglePushmenu">
-        <NuxtLink to="/" class="fs-5xl">Home</NuxtLink>
+        <nuxt-link to="/" class="fs-5xl">Home</nuxt-link>
       </li>
       <li class="delay-200" @click="togglePushmenu">
         <!-- <a href="#about" class="fs-5xl">About</a> -->
-        <NuxtLink to="/about" class="fs-5xl">About</NuxtLink>
+        <nuxt-link to="/about" class="fs-5xl">About</nuxt-link>
       </li>
       <li class="delay-400" @click="togglePushmenu">
-        <NuxtLink to="/nft" class="fs-5xl">NFTs</NuxtLink>
+        <nuxt-link to="/gold" class="fs-5xl">Gold coins</nuxt-link>
+      </li>
+      <li class="delay-400" @click="togglePushmenu">
+        <nuxt-link to="/silver" class="fs-5xl">Silver coins</nuxt-link>
       </li>
       <li class="delay-600" @click="togglePushmenu">
-        <NuxtLink to="#contact" class="fs-5xl">Contact</NuxtLink>
+        <nuxt-link to="#contact" class="fs-5xl">Contact</nuxt-link>
       </li>
     </ul>
   </nav>

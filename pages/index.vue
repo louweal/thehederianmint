@@ -33,7 +33,7 @@
       <Container>
         <div class="grid collapse align-xs-middle">
           <div class="col-xs-6">
-            <h2 class="fs-4xl f-no-margin" data-sos="85">Highlighted</h2>
+            <h2 class="fs-4xl f-no-margin" data-sos="85">Featured</h2>
           </div>
           <div class="col-xs-6 align-xs-end">
             <Button title="All NFTs" url="/nft" modifier="secondary" />
