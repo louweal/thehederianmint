@@ -1,7 +1,9 @@
 <template>
   <div id="top">
     <div class="bg">
-      <Star v-for="i in 20" :key="i" />
+      <star v-for="i in 200" :key="i" />
+      <star v-for="j in 200" :min="66" :key="'j' + j" />
+      <star v-for="k in 200" :min="33" :key="'k' + k" />
     </div>
     <Header :fixed="true" />
 

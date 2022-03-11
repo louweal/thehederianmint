@@ -3,9 +3,11 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
+  background-color: #191970;//#080830;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(#403345, 1) 100%
-  );
+    rgba(#191970, 1) 0%,
+    rgba(#080830, 1) 100%);
 }
+
+// #403345 
