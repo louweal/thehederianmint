@@ -89,7 +89,9 @@ export default {
         `https://gomint.me/saas/v1/token/supply.php?tokenId=${this.data.gomint_id}`
       );
       let gomint = await response.json();
-      this.currentStock = gomint.supply.status.on_sale;
+      this.currentStock =
+        parseInt(gomint.supply.total) -
+        (gomint.supply.status.sold_escrow + gomint.supply.status.sold_private); //.on_sale;
 
       // commit to store
       this.$store.commit("stock/setStock", {
