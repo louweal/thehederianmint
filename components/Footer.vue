@@ -96,7 +96,8 @@
         </div>
         <div class="col-xs-12">
           <p class="footer__copyright">
-            © {{ new Date().getFullYear() }} The Hederian Mint
+            © {{ new Date().getFullYear() }}
+            <a href="https://www.codesparks.nl" target="_blank">CODESPARKS</a>
           </p>
         </div>
       </div>
